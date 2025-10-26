@@ -156,21 +156,21 @@ export default function AnalysisPage() {
 
   return (
     <>
-      {/* Hero Section - Asymmetric Design */}
-      <div className="bg-black py-8 sm:py-12">
+      {/* Hero Section - Asymmetric Design - Mobile Optimized */}
+      <div className="bg-black py-6 sm:py-8 md:py-12">
         <div className="container mx-auto px-4">
-          <div className="relative group transform rotate-1 hover:rotate-0 transition-all duration-700 hover:scale-105 text-center mb-6 sm:mb-8">
-            <div className="bg-black border-2 border-retro-green/30 rounded-none p-8 overflow-hidden">
+          <div className="relative group transform rotate-1 hover:rotate-0 transition-all duration-700 hover:scale-105 text-center mb-4 sm:mb-6 md:mb-8">
+            <div className="bg-black border-2 border-retro-green/30 rounded-none p-4 sm:p-6 md:p-8 overflow-hidden">
               <div className="absolute inset-0 bg-gradient-to-br from-retro-green/5 to-retro-cyan/5"></div>
               <div className="relative">
-                <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-retro-green mb-4 font-mono tracking-wider transform -skew-x-2 group-hover:skew-x-0 transition-transform duration-500">
+                <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-retro-green mb-3 sm:mb-4 font-mono tracking-wider transform -skew-x-2 group-hover:skew-x-0 transition-transform duration-500">
                   MARKET ANALYSIS
                 </h1>
-                <p className="text-lg sm:text-xl text-retro-gray font-mono tracking-wider transform skew-x-1 group-hover:skew-x-0 transition-transform duration-500">
+                <p className="text-sm sm:text-base md:text-lg lg:text-xl text-retro-gray font-mono tracking-wider transform skew-x-1 group-hover:skew-x-0 transition-transform duration-500 px-2">
                   TECHNICAL ANALYSIS & TRADING RECOMMENDATIONS
                 </p>
               </div>
-              <div className="absolute top-0 right-0 w-32 h-32 bg-retro-green/10 transform rotate-45 translate-x-16 -translate-y-16"></div>
+              <div className="absolute top-0 right-0 w-16 h-16 sm:w-24 sm:h-24 md:w-32 md:h-32 bg-retro-green/10 transform rotate-45 translate-x-8 -translate-y-8 sm:translate-x-12 sm:-translate-y-12 md:translate-x-16 md:-translate-y-16"></div>
             </div>
           </div>
 
@@ -235,16 +235,16 @@ export default function AnalysisPage() {
         </div>
       </div>
 
-      {/* Analysis Results */}
-      <div className="container mx-auto px-4 py-8 sm:py-12">
+      {/* Analysis Results - Mobile Optimized */}
+      <div className="container mx-auto px-4 py-6 sm:py-8 md:py-12">
         <div className="max-w-6xl mx-auto">
           {loading ? (
-            <div className="text-center py-12">
-              <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-retro-green mx-auto mb-4"></div>
-              <p className="text-retro-gray font-mono">LOADING ANALYSIS...</p>
+            <div className="text-center py-8 sm:py-12">
+              <div className="animate-spin rounded-full h-8 w-8 sm:h-12 sm:w-12 border-b-2 border-retro-green mx-auto mb-4"></div>
+              <p className="text-retro-gray font-mono text-sm sm:text-base">LOADING ANALYSIS...</p>
             </div>
           ) : (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 md:gap-6">
               {analyses.map((analysis, index) => (
                 <div key={index} className="bg-black border-2 border-retro-green/30 rounded-none p-4 sm:p-6 hover:border-retro-green/50 transition-colors">
                   <div className="flex items-center justify-between mb-3 sm:mb-4">

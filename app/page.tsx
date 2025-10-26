@@ -111,45 +111,45 @@ export default function Home() {
         </div>
 
 
-        <div className="container mx-auto px-6 py-12 max-w-7xl">
-          {/* Charts Section */}
-          <div className="mb-16">
-            <div className="text-center mb-12">
+        <div className="container mx-auto px-4 sm:px-6 py-8 sm:py-12 max-w-7xl">
+          {/* Charts Section - Mobile Optimized */}
+          <div className="mb-12 sm:mb-16">
+            <div className="text-center mb-8 sm:mb-12">
               <div className="relative group transform rotate-1 hover:rotate-0 transition-all duration-700 hover:scale-105 inline-block mb-4">
-                <div className="bg-black border-2 border-retro-green/30 rounded-none px-4 py-2 overflow-hidden">
+                <div className="bg-black border-2 border-retro-green/30 rounded-none px-3 sm:px-4 py-2 overflow-hidden">
                   <div className="absolute inset-0 bg-gradient-to-br from-retro-green/5 to-retro-cyan/5"></div>
                   <div className="relative">
-                    <span className="text-retro-green font-semibold font-mono tracking-wider transform -skew-x-1 group-hover:skew-x-0 transition-transform duration-500">LIVE CHARTS</span>
+                    <span className="text-retro-green font-semibold font-mono tracking-wider text-sm sm:text-base transform -skew-x-1 group-hover:skew-x-0 transition-transform duration-500">LIVE CHARTS</span>
                   </div>
-                  <div className="absolute top-0 right-0 w-12 h-12 bg-retro-green/10 transform rotate-45 translate-x-6 -translate-y-6"></div>
+                  <div className="absolute top-0 right-0 w-8 h-8 sm:w-12 sm:h-12 bg-retro-green/10 transform rotate-45 translate-x-4 -translate-y-4 sm:translate-x-6 sm:-translate-y-6"></div>
                 </div>
               </div>
-              <h2 className="text-4xl font-bold text-retro-green mb-4 font-mono tracking-wider">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-retro-green mb-4 font-mono tracking-wider">
                 REAL-TIME <span className="text-retro-cyan">MARKET DATA</span>
               </h2>
-              <p className="text-xl text-retro-gray max-w-3xl mx-auto">
+              <p className="text-base sm:text-lg md:text-xl text-retro-gray max-w-3xl mx-auto px-4">
                 Interactive charts and analytics to track cryptocurrency performance and market trends.
               </p>
             </div>
             
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-12">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 mb-8 sm:mb-12">
               <PriceChart />
               <VolumeChart />
             </div>
             
-            <div className="mb-12">
+            <div className="mb-8 sm:mb-12">
               <MarketOverview />
             </div>
             
           </div>
 
 
-          {/* Main Content */}
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
+          {/* Main Content - Mobile Optimized */}
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-12">
             <div className="lg:col-span-2">
               <NewsGrid />
             </div>
-            <div className="lg:col-span-1 space-y-12">
+            <div className="lg:col-span-1 space-y-6 sm:space-y-8 lg:space-y-12">
               <TrendingSection />
               <ActivityWidget />
             </div>

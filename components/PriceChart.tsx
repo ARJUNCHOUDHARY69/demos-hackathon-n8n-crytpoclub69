@@ -100,43 +100,43 @@ export default function PriceChart() {
       <div className="bg-black border-2 border-retro-blue/30 rounded-none overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-retro-blue/5 to-retro-green/5"></div>
         <div className="relative p-6">
-          {/* Header */}
-          <div className="flex items-center justify-between mb-6">
-            <div className="flex items-center space-x-3">
-              <div className="w-8 h-8 bg-retro-blue border-2 border-retro-green transform rotate-12 group-hover:rotate-0 transition-transform duration-500 flex items-center justify-center">
-                <BarChart3 className="w-5 h-5 text-black" />
+          {/* Header - Mobile Optimized */}
+          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-4 sm:mb-6 gap-3 sm:gap-0">
+            <div className="flex items-center space-x-2 sm:space-x-3">
+              <div className="w-6 h-6 sm:w-8 sm:h-8 bg-retro-blue border-2 border-retro-green transform rotate-12 group-hover:rotate-0 transition-transform duration-500 flex items-center justify-center">
+                <BarChart3 className="w-3 h-3 sm:w-5 sm:h-5 text-black" />
               </div>
               <div>
-                <h3 className="text-lg font-bold text-retro-blue font-mono tracking-wider transform skew-x-1 group-hover:skew-x-0 transition-transform duration-500">
+                <h3 className="text-sm sm:text-base lg:text-lg font-bold text-retro-blue font-mono tracking-wider transform skew-x-1 group-hover:skew-x-0 transition-transform duration-500">
                   BITCOIN PRICE CHART
                 </h3>
-                <p className="text-sm text-retro-gray font-mono">REAL-TIME MARKET DATA</p>
+                <p className="text-xs sm:text-sm text-retro-gray font-mono">REAL-TIME MARKET DATA</p>
               </div>
             </div>
             
-            <div className="flex items-center space-x-1 px-3 py-1 bg-retro-green/20 border border-retro-green/30 rounded-none text-retro-green">
-              <TrendingUp className="w-4 h-4" />
-              <span className="font-semibold text-sm font-mono">{formatChange(priceChange)}</span>
+            <div className="flex items-center space-x-1 px-2 sm:px-3 py-1 bg-retro-green/20 border border-retro-green/30 rounded-none text-retro-green">
+              <TrendingUp className="w-3 h-3 sm:w-4 sm:h-4" />
+              <span className="font-semibold text-xs sm:text-sm font-mono">{formatChange(priceChange)}</span>
             </div>
           </div>
 
-          {/* Current Price Display */}
-          <div className="mb-6">
-            <div className="text-3xl font-bold text-retro-cyan mb-1 font-mono">
+          {/* Current Price Display - Mobile Optimized */}
+          <div className="mb-4 sm:mb-6">
+            <div className="text-xl sm:text-2xl lg:text-3xl font-bold text-retro-cyan mb-1 font-mono">
               {currentPrice ? formatPrice(currentPrice) : '$107,916'}
             </div>
-            <div className="text-sm text-retro-gray font-mono">
+            <div className="text-xs sm:text-sm text-retro-gray font-mono">
               24H PERFORMANCE
             </div>
           </div>
 
-          {/* Timeframe Selector */}
-          <div className="flex space-x-1 mb-6">
+          {/* Timeframe Selector - Mobile Optimized */}
+          <div className="flex flex-wrap gap-1 sm:gap-1 mb-4 sm:mb-6">
             {timeframes.map((timeframe) => (
               <button
                 key={timeframe.value}
                 onClick={() => setSelectedTimeframe(timeframe.value)}
-                className={`px-3 py-2 border text-sm font-medium transition-all duration-200 font-mono ${
+                className={`px-2 sm:px-3 py-1 sm:py-2 border text-xs sm:text-sm font-medium transition-all duration-200 font-mono ${
                   selectedTimeframe === timeframe.value
                     ? 'bg-retro-green text-black border-retro-green'
                     : 'bg-black text-retro-gray border-retro-blue/30 hover:border-retro-green/50'
@@ -147,14 +147,14 @@ export default function PriceChart() {
             ))}
           </div>
 
-          {/* Chart Area */}
+          {/* Chart Area - Mobile Optimized */}
           <div className="relative">
             {loading ? (
-              <div className="h-80 bg-retro-blue/10 border border-retro-green/30 flex items-center justify-center">
-                <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-retro-green"></div>
+              <div className="h-48 sm:h-64 lg:h-80 bg-retro-blue/10 border border-retro-green/30 flex items-center justify-center">
+                <div className="animate-spin rounded-full h-6 w-6 sm:h-8 sm:w-8 border-b-2 border-retro-green"></div>
               </div>
             ) : (
-              <div className="h-80 bg-retro-blue/5 border border-retro-green/20 p-6 relative overflow-hidden">
+              <div className="h-48 sm:h-64 lg:h-80 bg-retro-blue/5 border border-retro-green/20 p-3 sm:p-6 relative overflow-hidden">
             {/* Interactive Area Chart */}
             <svg className="w-full h-full" viewBox="0 0 500 300">
               {/* Grid Lines */}

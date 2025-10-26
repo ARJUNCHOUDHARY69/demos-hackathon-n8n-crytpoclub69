@@ -3,15 +3,15 @@ import Footer from '@/components/Footer'
 export default function NewsPage() {
   return (
     <>
-      {/* Main Content - Asymmetric Design */}
-      <div className="container mx-auto px-4 py-8 sm:py-12">
+      {/* Main Content - Asymmetric Design - Mobile Optimized */}
+      <div className="container mx-auto px-4 py-6 sm:py-8 md:py-12">
         <div className="max-w-5xl mx-auto">
-          {/* News Categories */}
+          {/* News Categories - Mobile Optimized */}
           <div className="relative group transform -rotate-1 hover:rotate-0 transition-all duration-700 hover:scale-105">
             <div className="bg-black border-2 border-retro-blue/30 rounded-none p-4 sm:p-6 md:p-8 overflow-hidden">
               <div className="absolute inset-0 bg-gradient-to-br from-retro-blue/5 to-retro-green/5"></div>
               <div className="relative">
-                <h3 className="text-2xl sm:text-3xl font-bold text-retro-blue mb-6 sm:mb-8 text-center font-mono tracking-wider transform skew-x-2 group-hover:skew-x-0 transition-transform duration-500">
+                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-retro-blue mb-4 sm:mb-6 md:mb-8 text-center font-mono tracking-wider transform skew-x-2 group-hover:skew-x-0 transition-transform duration-500">
                   NEWS CATEGORIES
                 </h3>
               
@@ -99,9 +99,9 @@ export default function NewsPage() {
             </div>
           </div>
 
-          {/* News Articles Grid */}
-          <div className="mt-8 sm:mt-12">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+          {/* News Articles Grid - Mobile Optimized */}
+          <div className="mt-6 sm:mt-8 md:mt-12">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 md:gap-6">
               {/* Article 1 */}
               <div className="bg-gray-800/30 rounded-xl p-4 sm:p-6 border border-gray-700/50 hover:border-crypto-gold/50 transition-colors group cursor-pointer">
                 <div className="flex items-center gap-3 mb-3 sm:mb-4">

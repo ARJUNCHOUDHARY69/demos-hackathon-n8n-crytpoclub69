@@ -30,50 +30,50 @@ export default function ArticlePage() {
 
   return (
     <div>
-      {/* Hero Section - Asymmetric Design */}
-      <div className="relative bg-black py-12 sm:py-16 md:py-20 overflow-hidden">
+      {/* Hero Section - Asymmetric Design - Mobile Optimized */}
+      <div className="relative bg-black py-8 sm:py-12 md:py-16 lg:py-20 overflow-hidden">
         <div className="container mx-auto px-4 relative z-10">
           <div className="relative group transform rotate-1 hover:rotate-0 transition-all duration-700 hover:scale-105 text-center max-w-4xl mx-auto">
-            <div className="bg-black border-2 border-retro-magenta/30 rounded-none p-8 overflow-hidden">
+            <div className="bg-black border-2 border-retro-magenta/30 rounded-none p-4 sm:p-6 md:p-8 overflow-hidden">
               <div className="absolute inset-0 bg-gradient-to-br from-retro-magenta/5 to-retro-red/5"></div>
               <div className="relative">
-                <div className="inline-block bg-retro-magenta/10 border border-retro-magenta/30 rounded-none px-3 py-1.5 mb-4 sm:mb-6 transform -skew-x-1 group-hover:skew-x-0 transition-transform duration-500">
+                <div className="inline-block bg-retro-magenta/10 border border-retro-magenta/30 rounded-none px-2 sm:px-3 py-1 sm:py-1.5 mb-3 sm:mb-4 md:mb-6 transform -skew-x-1 group-hover:skew-x-0 transition-transform duration-500">
                   <span className="text-retro-magenta text-xs sm:text-sm font-mono tracking-wider">LATEST INSIGHTS</span>
             </div>
             
-                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-retro-magenta mb-4 sm:mb-6 font-mono tracking-wider leading-tight transform skew-x-2 group-hover:skew-x-0 transition-transform duration-500">
+                <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-retro-magenta mb-3 sm:mb-4 md:mb-6 font-mono tracking-wider leading-tight transform skew-x-2 group-hover:skew-x-0 transition-transform duration-500">
                   FEATURED <span className="text-retro-red">ARTICLES</span>
             </h1>
             
-                <p className="text-base sm:text-lg md:text-xl text-retro-gray font-mono mb-6 sm:mb-8 max-w-2xl mx-auto leading-relaxed transform -skew-x-1 group-hover:skew-x-0 transition-transform duration-500">
+                <p className="text-sm sm:text-base md:text-lg lg:text-xl text-retro-gray font-mono mb-4 sm:mb-6 md:mb-8 max-w-2xl mx-auto leading-relaxed transform -skew-x-1 group-hover:skew-x-0 transition-transform duration-500 px-2">
               Expert insights on the future of cryptocurrency and blockchain technology
             </p>
               </div>
-              <div className="absolute top-0 right-0 w-32 h-32 bg-retro-magenta/10 transform rotate-45 translate-x-16 -translate-y-16"></div>
+              <div className="absolute top-0 right-0 w-16 h-16 sm:w-24 sm:h-24 md:w-32 md:h-32 bg-retro-magenta/10 transform rotate-45 translate-x-8 -translate-y-8 sm:translate-x-12 sm:-translate-y-12 md:translate-x-16 md:-translate-y-16"></div>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Modern Charts Section */}
-      <div className="container mx-auto px-4 py-8 sm:py-12">
+      {/* Modern Charts Section - Mobile Optimized */}
+      <div className="container mx-auto px-4 py-6 sm:py-8 md:py-12">
         <div className="max-w-6xl mx-auto">
-          {/* Charts Header - Asymmetric Design */}
-          <div className="relative group transform rotate-1 hover:rotate-0 transition-all duration-700 hover:scale-105 text-center mb-8">
-            <div className="bg-black border-2 border-retro-green/30 rounded-none p-6 overflow-hidden">
+          {/* Charts Header - Asymmetric Design - Mobile Optimized */}
+          <div className="relative group transform rotate-1 hover:rotate-0 transition-all duration-700 hover:scale-105 text-center mb-6 sm:mb-8">
+            <div className="bg-black border-2 border-retro-green/30 rounded-none p-4 sm:p-6 overflow-hidden">
               <div className="absolute inset-0 bg-gradient-to-br from-retro-green/5 to-retro-cyan/5"></div>
               <div className="relative">
-                <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-retro-green mb-4 font-mono tracking-wider transform skew-x-2 group-hover:skew-x-0 transition-transform duration-500">
+                <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-retro-green mb-3 sm:mb-4 font-mono tracking-wider transform skew-x-2 group-hover:skew-x-0 transition-transform duration-500">
                   LIVE <span className="text-retro-cyan">MARKET ANALYTICS</span>
                 </h2>
-                <p className="text-retro-gray font-mono transform -skew-x-1 group-hover:skew-x-0 transition-transform duration-500">Real-time cryptocurrency market data and insights</p>
+                <p className="text-sm sm:text-base text-retro-gray font-mono transform -skew-x-1 group-hover:skew-x-0 transition-transform duration-500 px-2">Real-time cryptocurrency market data and insights</p>
               </div>
-              <div className="absolute -top-1 -right-1 w-3 h-3 bg-retro-green animate-pulse"></div>
+              <div className="absolute -top-1 -right-1 w-2 h-2 sm:w-3 sm:h-3 bg-retro-green animate-pulse"></div>
             </div>
           </div>
 
-          {/* Charts Grid */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-12">
+          {/* Charts Grid - Mobile Optimized */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 mb-8 sm:mb-12">
             {/* Coin Performance Chart - Asymmetric Design */}
             <div className="relative group transform -rotate-1 hover:rotate-0 transition-all duration-700 hover:scale-105">
               <div className="bg-black border-2 border-retro-green/30 rounded-none p-6 overflow-hidden">

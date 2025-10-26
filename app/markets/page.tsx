@@ -134,21 +134,21 @@ export default function MarketsPage() {
 
   return (
     <>
-      {/* Hero Section - Asymmetric Design */}
-      <div className="bg-black py-8 sm:py-12">
+      {/* Hero Section - Asymmetric Design - Mobile Optimized */}
+      <div className="bg-black py-6 sm:py-8 md:py-12">
         <div className="container mx-auto px-4">
-          <div className="relative group transform -rotate-1 hover:rotate-0 transition-all duration-700 hover:scale-105 text-center mb-6 sm:mb-8">
-            <div className="bg-black border-2 border-retro-cyan/30 rounded-none p-8 overflow-hidden">
+          <div className="relative group transform -rotate-1 hover:rotate-0 transition-all duration-700 hover:scale-105 text-center mb-4 sm:mb-6 md:mb-8">
+            <div className="bg-black border-2 border-retro-cyan/30 rounded-none p-4 sm:p-6 md:p-8 overflow-hidden">
               <div className="absolute inset-0 bg-gradient-to-br from-retro-cyan/5 to-retro-amber/5"></div>
               <div className="relative">
-                <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-retro-cyan mb-4 font-mono tracking-wider transform skew-x-2 group-hover:skew-x-0 transition-transform duration-500">
+                <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-retro-cyan mb-3 sm:mb-4 font-mono tracking-wider transform skew-x-2 group-hover:skew-x-0 transition-transform duration-500">
                   CRYPTO MARKETS
                 </h1>
-                <p className="text-lg sm:text-xl text-retro-gray font-mono tracking-wider transform -skew-x-1 group-hover:skew-x-0 transition-transform duration-500">
+                <p className="text-sm sm:text-base md:text-lg lg:text-xl text-retro-gray font-mono tracking-wider transform -skew-x-1 group-hover:skew-x-0 transition-transform duration-500 px-2">
                   LIVE CRYPTOCURRENCY MARKET DATA POWERED BY COINGECKO
                 </p>
               </div>
-              <div className="absolute top-0 right-0 w-32 h-32 bg-retro-cyan/10 transform rotate-45 translate-x-16 -translate-y-16"></div>
+              <div className="absolute top-0 right-0 w-16 h-16 sm:w-24 sm:h-24 md:w-32 md:h-32 bg-retro-cyan/10 transform rotate-45 translate-x-8 -translate-y-8 sm:translate-x-12 sm:-translate-y-12 md:translate-x-16 md:-translate-y-16"></div>
             </div>
           </div>
 
@@ -376,20 +376,20 @@ export default function MarketsPage() {
         </div>
       </div>
 
-      {/* Market Table - Asymmetric Design */}
-      <div className="container mx-auto px-4 py-6 sm:py-8">
+      {/* Market Table - Asymmetric Design - Mobile Optimized */}
+      <div className="container mx-auto px-4 py-4 sm:py-6 md:py-8">
         <div className="relative group transform -rotate-1 hover:rotate-0 transition-all duration-700 hover:scale-105">
-          <div className="bg-black border-2 border-retro-blue/30 rounded-none p-4 sm:p-6 overflow-hidden">
+          <div className="bg-black border-2 border-retro-blue/30 rounded-none p-3 sm:p-4 md:p-6 overflow-hidden">
             <div className="absolute inset-0 bg-gradient-to-br from-retro-blue/5 to-retro-green/5"></div>
             <div className="relative">
           {loading ? (
-            <div className="text-center py-12">
-                  <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-retro-blue mx-auto mb-4"></div>
-                  <p className="text-retro-gray font-mono">LOADING MARKET DATA...</p>
+            <div className="text-center py-8 sm:py-12">
+                  <div className="animate-spin rounded-full h-8 w-8 sm:h-12 sm:w-12 border-b-2 border-retro-blue mx-auto mb-4"></div>
+                  <p className="text-retro-gray font-mono text-sm sm:text-base">LOADING MARKET DATA...</p>
             </div>
           ) : (
             <div className="overflow-x-auto">
-              <table className="w-full">
+              <table className="w-full min-w-[600px]">
                 <thead>
                       <tr className="border-b-2 border-retro-blue">
                         <th className="text-left py-4 px-4 text-retro-blue font-mono tracking-wider transform skew-x-1 group-hover:skew-x-0 transition-transform duration-500">#</th>

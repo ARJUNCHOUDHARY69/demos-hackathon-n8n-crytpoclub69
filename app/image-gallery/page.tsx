@@ -29,6 +29,7 @@ export default function ImageGalleryPage() {
   const [imagesPerPage, setImagesPerPage] = useState(100)
   const [showAll, setShowAll] = useState(false)
   const [downloadMessage, setDownloadMessage] = useState('')
+  const [imageLoadError, setImageLoadError] = useState(false)
   const [apiStatus, setApiStatus] = useState<{
     status: 'loading' | 'success' | 'error' | 'empty'
     message: string
@@ -121,7 +122,10 @@ export default function ImageGalleryPage() {
   }, [])
 
   const openModal = (image: LocalImage) => {
+    console.log('Opening modal for image:', image)
+    console.log('Image URL:', image.url)
     setSelectedImage(image)
+    setImageLoadError(false)
   }
 
   const closeModal = () => {
@@ -163,23 +167,23 @@ export default function ImageGalleryPage() {
 
   return (
     <div className="min-h-screen bg-gray-900 text-white">
-      {/* Hero Section - Matching Image Design */}
-      <div className="relative bg-black py-12 sm:py-16 md:py-20">
+      {/* Hero Section - Matching Image Design - Mobile Optimized */}
+      <div className="relative bg-black py-8 sm:py-12 md:py-16 lg:py-20">
         <div className="container mx-auto px-4 relative z-10">
-          {/* Main Gallery Box - Matching the image design */}
-          <div className="max-w-4xl mx-auto mb-8">
-            <div className="bg-gray-900 border-2 border-green-400 rounded-lg p-6 relative">
+          {/* Main Gallery Box - Matching the image design - Mobile Optimized */}
+          <div className="max-w-4xl mx-auto mb-6 sm:mb-8">
+            <div className="bg-gray-900 border-2 border-green-400 rounded-lg p-4 sm:p-6 relative">
               <div className="flex items-center justify-between">
-                <div className="flex items-center space-x-3">
-                  <div className="w-3 h-3 bg-green-400 rounded-full"></div>
-                  <RefreshCw className="w-4 h-4 text-green-400" />
-                  <span className="text-white font-bold text-lg">
+                <div className="flex items-center space-x-2 sm:space-x-3">
+                  <div className="w-2 h-2 sm:w-3 sm:h-3 bg-green-400 rounded-full"></div>
+                  <RefreshCw className="w-3 h-3 sm:w-4 sm:h-4 text-green-400" />
+                  <span className="text-white font-bold text-sm sm:text-base lg:text-lg">
                     GEMINI AI GALLERY: {images.length} AI-GENERATED IMAGES
                   </span>
                 </div>
               </div>
-              <div className="mt-3 text-center">
-                <span className="text-gray-300 text-sm">
+              <div className="mt-2 sm:mt-3 text-center">
+                <span className="text-gray-300 text-xs sm:text-sm">
                   GOOGLE GEMINI AI • AI-GENERATED • HIGH-QUALITY • PROFESSIONAL
                 </span>
               </div>
@@ -229,8 +233,8 @@ export default function ImageGalleryPage() {
               </button>
             </div>
 
-            {/* Image Grid */}
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-2 sm:gap-4">
+            {/* Image Grid - Mobile Optimized */}
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-2 sm:gap-3 md:gap-4">
               {displayedImages.map((image, index) => (
                 <div
                   key={image.id}
@@ -332,37 +336,59 @@ export default function ImageGalleryPage() {
         )}
       </div>
 
-      {/* Image Modal */}
+      {/* Image Modal - Mobile Optimized */}
       {selectedImage && (
-        <div className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4">
-          <div className="relative max-w-4xl max-h-full">
+        <div className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-2 sm:p-4">
+          <div className="relative max-w-4xl max-h-full w-full">
             <button
               onClick={closeModal}
-              className="absolute top-4 right-4 bg-black/50 text-white p-2 rounded-lg hover:bg-black/70 transition-colors z-10"
+              className="absolute top-2 right-2 sm:top-4 sm:right-4 bg-black/50 text-white p-1 sm:p-2 rounded-lg hover:bg-black/70 transition-colors z-10 text-sm sm:text-base"
             >
               ✕
             </button>
             
             <div className="relative">
-              <Image
-                src={selectedImage.url}
-                alt={selectedImage.name}
-                width={800}
-                height={600}
-                className="max-w-full max-h-[80vh] object-contain rounded-lg"
-              />
+              {!imageLoadError ? (
+                <img
+                  src={selectedImage.url}
+                  alt={selectedImage.name}
+                  className="max-w-full max-h-[70vh] sm:max-h-[80vh] object-contain rounded-lg"
+                  onError={(e) => {
+                    console.error('Image load error:', selectedImage.url, e)
+                    setImageLoadError(true)
+                  }}
+                  onLoad={() => {
+                    console.log('Image loaded successfully:', selectedImage.url)
+                    setImageLoadError(false)
+                  }}
+                />
+              ) : (
+                <div className="max-w-full max-h-[70vh] sm:max-h-[80vh] bg-gray-800 border border-gray-600 rounded-lg flex items-center justify-center p-8">
+                  <div className="text-center">
+                    <div className="text-red-400 text-4xl mb-4">⚠️</div>
+                    <p className="text-white font-mono text-sm mb-2">Image failed to load</p>
+                    <p className="text-gray-400 font-mono text-xs mb-4">{selectedImage.name}</p>
+                    <button
+                      onClick={() => setImageLoadError(false)}
+                      className="bg-crypto-gold text-black px-4 py-2 rounded-lg font-mono hover:bg-crypto-gold/80 transition-colors text-sm"
+                    >
+                      RETRY
+                    </button>
+                  </div>
+                </div>
+              )}
               
-              <div className="absolute bottom-0 left-0 right-0 bg-black/80 text-white p-4 rounded-b-lg">
-                <h3 className="font-bold text-lg font-mono mb-2">{selectedImage.name}</h3>
-                <div className="flex justify-between items-center">
-                  <span className="text-sm font-mono">
+              <div className="absolute bottom-0 left-0 right-0 bg-black/80 text-white p-2 sm:p-4 rounded-b-lg">
+                <h3 className="font-bold text-sm sm:text-base lg:text-lg font-mono mb-1 sm:mb-2 truncate">{selectedImage.name}</h3>
+                <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2">
+                  <span className="text-xs sm:text-sm font-mono">
                     Size: {(selectedImage.size / 1024 / 1024).toFixed(1)}MB
                   </span>
                   <button
                     onClick={() => handleDownload(selectedImage)}
-                    className="bg-crypto-gold text-black px-4 py-2 rounded-lg font-mono hover:bg-crypto-gold/80 transition-colors flex items-center gap-2"
+                    className="bg-crypto-gold text-black px-2 sm:px-4 py-1 sm:py-2 rounded-lg font-mono hover:bg-crypto-gold/80 transition-colors flex items-center gap-1 sm:gap-2 text-xs sm:text-sm"
                   >
-                    <Download className="w-4 h-4" />
+                    <Download className="w-3 h-3 sm:w-4 sm:h-4" />
                     DOWNLOAD
                   </button>
                 </div>
