@@ -153,11 +153,15 @@ export default function NewsPage() {
                   </div>
                 </div>
                 <div className="text-gray-300 text-xs sm:text-sm mb-3 sm:mb-4 line-clamp-3">
-                  <iframe 
-                    src="/dropbox-downloads/news1.html" 
-                    className="w-full h-32 border-0 rounded"
-                    title="News 1"
-                  />
+                  <div className="w-full h-32 bg-gradient-to-br from-orange-500/20 to-orange-600/20 border border-orange-500/30 rounded flex items-center justify-center">
+                    <div className="text-center">
+                      <div className="w-12 h-12 bg-orange-500 rounded-full flex items-center justify-center mx-auto mb-2">
+                        <span className="text-white font-bold text-lg">1</span>
+                      </div>
+                      <p className="text-orange-400 font-mono text-sm font-bold">NEWS ARTICLE 1</p>
+                      <p className="text-orange-300 font-mono text-xs">Click to read full content</p>
+                    </div>
+                  </div>
                 </div>
                 <div className="flex items-center justify-between">
                   <span className="text-orange-400 text-xs sm:text-sm font-semibold">READ MORE</span>
@@ -177,11 +181,15 @@ export default function NewsPage() {
                   </div>
                 </div>
                 <div className="text-gray-300 text-xs sm:text-sm mb-3 sm:mb-4 line-clamp-3">
-                  <iframe 
-                    src="/dropbox-downloads/news2.html" 
-                    className="w-full h-32 border-0 rounded"
-                    title="News 2"
-                  />
+                  <div className="w-full h-32 bg-gradient-to-br from-blue-500/20 to-blue-600/20 border border-blue-500/30 rounded flex items-center justify-center">
+                    <div className="text-center">
+                      <div className="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center mx-auto mb-2">
+                        <span className="text-white font-bold text-lg">2</span>
+                      </div>
+                      <p className="text-blue-400 font-mono text-sm font-bold">NEWS ARTICLE 2</p>
+                      <p className="text-blue-300 font-mono text-xs">Click to read full content</p>
+                    </div>
+                  </div>
                 </div>
                 <div className="flex items-center justify-between">
                   <span className="text-blue-400 text-xs sm:text-sm font-semibold">READ MORE</span>
@@ -201,11 +209,15 @@ export default function NewsPage() {
                   </div>
                 </div>
                 <div className="text-gray-300 text-xs sm:text-sm mb-3 sm:mb-4 line-clamp-3">
-                  <iframe 
-                    src="/dropbox-downloads/news3.html" 
-                    className="w-full h-32 border-0 rounded"
-                    title="News 3"
-                  />
+                  <div className="w-full h-32 bg-gradient-to-br from-green-500/20 to-green-600/20 border border-green-500/30 rounded flex items-center justify-center">
+                    <div className="text-center">
+                      <div className="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-2">
+                        <span className="text-white font-bold text-lg">3</span>
+                      </div>
+                      <p className="text-green-400 font-mono text-sm font-bold">NEWS ARTICLE 3</p>
+                      <p className="text-green-300 font-mono text-xs">Click to read full content</p>
+                    </div>
+                  </div>
                 </div>
                 <div className="flex items-center justify-between">
                   <span className="text-green-400 text-xs sm:text-sm font-semibold">READ MORE</span>
@@ -225,11 +237,15 @@ export default function NewsPage() {
                   </div>
                 </div>
                 <div className="text-gray-300 text-xs sm:text-sm mb-3 sm:mb-4 line-clamp-3">
-                  <iframe 
-                    src="/dropbox-downloads/news4.html" 
-                    className="w-full h-32 border-0 rounded"
-                    title="News 4"
-                  />
+                  <div className="w-full h-32 bg-gradient-to-br from-purple-500/20 to-purple-600/20 border border-purple-500/30 rounded flex items-center justify-center">
+                    <div className="text-center">
+                      <div className="w-12 h-12 bg-purple-500 rounded-full flex items-center justify-center mx-auto mb-2">
+                        <span className="text-white font-bold text-lg">4</span>
+                      </div>
+                      <p className="text-purple-400 font-mono text-sm font-bold">NEWS ARTICLE 4</p>
+                      <p className="text-purple-300 font-mono text-xs">Click to read full content</p>
+                    </div>
+                  </div>
                 </div>
                 <div className="flex items-center justify-between">
                   <span className="text-purple-400 text-xs sm:text-sm font-semibold">READ MORE</span>
@@ -249,11 +265,15 @@ export default function NewsPage() {
                   </div>
                 </div>
                 <div className="text-gray-300 text-xs sm:text-sm mb-3 sm:mb-4 line-clamp-3">
-                  <iframe 
-                    src="/dropbox-downloads/news5.html" 
-                    className="w-full h-32 border-0 rounded"
-                    title="News 5"
-                  />
+                  <div className="w-full h-32 bg-gradient-to-br from-cyan-500/20 to-cyan-600/20 border border-cyan-500/30 rounded flex items-center justify-center">
+                    <div className="text-center">
+                      <div className="w-12 h-12 bg-cyan-500 rounded-full flex items-center justify-center mx-auto mb-2">
+                        <span className="text-white font-bold text-lg">5</span>
+                      </div>
+                      <p className="text-cyan-400 font-mono text-sm font-bold">NEWS ARTICLE 5</p>
+                      <p className="text-cyan-300 font-mono text-xs">Click to read full content</p>
+                    </div>
+                  </div>
                 </div>
                 <div className="flex items-center justify-between">
                   <span className="text-cyan-400 text-xs sm:text-sm font-semibold">READ MORE</span>
@@ -273,11 +293,15 @@ export default function NewsPage() {
                   </div>
                 </div>
                 <div className="text-gray-300 text-xs sm:text-sm mb-3 sm:mb-4 line-clamp-3">
-                  <iframe 
-                    src="/dropbox-downloads/news6.html" 
-                    className="w-full h-32 border-0 rounded"
-                    title="News 6"
-                  />
+                  <div className="w-full h-32 bg-gradient-to-br from-red-500/20 to-red-600/20 border border-red-500/30 rounded flex items-center justify-center">
+                    <div className="text-center">
+                      <div className="w-12 h-12 bg-red-500 rounded-full flex items-center justify-center mx-auto mb-2">
+                        <span className="text-white font-bold text-lg">6</span>
+                      </div>
+                      <p className="text-red-400 font-mono text-sm font-bold">NEWS ARTICLE 6</p>
+                      <p className="text-red-300 font-mono text-xs">Click to read full content</p>
+                    </div>
+                  </div>
                 </div>
                 <div className="flex items-center justify-between">
                   <span className="text-red-400 text-xs sm:text-sm font-semibold">READ MORE</span>
@@ -297,11 +321,15 @@ export default function NewsPage() {
                   </div>
                 </div>
                 <div className="text-gray-300 text-xs sm:text-sm mb-3 sm:mb-4 line-clamp-3">
-                  <iframe 
-                    src="/dropbox-downloads/news7.html" 
-                    className="w-full h-32 border-0 rounded"
-                    title="News 7"
-                  />
+                  <div className="w-full h-32 bg-gradient-to-br from-yellow-500/20 to-yellow-600/20 border border-yellow-500/30 rounded flex items-center justify-center">
+                    <div className="text-center">
+                      <div className="w-12 h-12 bg-yellow-500 rounded-full flex items-center justify-center mx-auto mb-2">
+                        <span className="text-white font-bold text-lg">7</span>
+                      </div>
+                      <p className="text-yellow-400 font-mono text-sm font-bold">NEWS ARTICLE 7</p>
+                      <p className="text-yellow-300 font-mono text-xs">Click to read full content</p>
+                    </div>
+                  </div>
                 </div>
                 <div className="flex items-center justify-between">
                   <span className="text-yellow-400 text-xs sm:text-sm font-semibold">READ MORE</span>
@@ -321,11 +349,15 @@ export default function NewsPage() {
                   </div>
                 </div>
                 <div className="text-gray-300 text-xs sm:text-sm mb-3 sm:mb-4 line-clamp-3">
-                  <iframe 
-                    src="/dropbox-downloads/news8.html" 
-                    className="w-full h-32 border-0 rounded"
-                    title="News 8"
-                  />
+                  <div className="w-full h-32 bg-gradient-to-br from-indigo-500/20 to-indigo-600/20 border border-indigo-500/30 rounded flex items-center justify-center">
+                    <div className="text-center">
+                      <div className="w-12 h-12 bg-indigo-500 rounded-full flex items-center justify-center mx-auto mb-2">
+                        <span className="text-white font-bold text-lg">8</span>
+                      </div>
+                      <p className="text-indigo-400 font-mono text-sm font-bold">NEWS ARTICLE 8</p>
+                      <p className="text-indigo-300 font-mono text-xs">Click to read full content</p>
+                    </div>
+                  </div>
                 </div>
                 <div className="flex items-center justify-between">
                   <span className="text-indigo-400 text-xs sm:text-sm font-semibold">READ MORE</span>
@@ -345,11 +377,15 @@ export default function NewsPage() {
                   </div>
                 </div>
                 <div className="text-gray-300 text-xs sm:text-sm mb-3 sm:mb-4 line-clamp-3">
-                  <iframe 
-                    src="/dropbox-downloads/news9.html" 
-                    className="w-full h-32 border-0 rounded"
-                    title="News 9"
-                  />
+                  <div className="w-full h-32 bg-gradient-to-br from-pink-500/20 to-pink-600/20 border border-pink-500/30 rounded flex items-center justify-center">
+                    <div className="text-center">
+                      <div className="w-12 h-12 bg-pink-500 rounded-full flex items-center justify-center mx-auto mb-2">
+                        <span className="text-white font-bold text-lg">9</span>
+                      </div>
+                      <p className="text-pink-400 font-mono text-sm font-bold">NEWS ARTICLE 9</p>
+                      <p className="text-pink-300 font-mono text-xs">Click to read full content</p>
+                    </div>
+                  </div>
                 </div>
                 <div className="flex items-center justify-between">
                   <span className="text-pink-400 text-xs sm:text-sm font-semibold">READ MORE</span>
