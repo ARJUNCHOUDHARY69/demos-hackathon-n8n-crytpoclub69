@@ -317,7 +317,7 @@ export default function ArticlePage() {
                     </div>
                     <div className="flex items-center space-x-2 text-retro-gray text-sm font-mono">
                       <Calendar className="w-4 h-4" />
-                      <span>Dec 15, 2024</span>
+                      <span>Jan 15, 2025</span>
                       </div>
                       </div>
 
@@ -391,7 +391,7 @@ export default function ArticlePage() {
                     </div>
                     <div className="flex items-center space-x-2 text-retro-gray text-sm font-mono">
                       <Calendar className="w-4 h-4" />
-                      <span>Dec 12, 2024</span>
+                      <span>Jan 12, 2025</span>
                     </div>
                   </div>
                 
