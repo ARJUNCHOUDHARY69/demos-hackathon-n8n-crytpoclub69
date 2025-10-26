@@ -88,6 +88,30 @@ export default function Home() {
                   <p className="text-sm sm:text-base text-retro-gray font-mono mb-6 sm:mb-8 max-w-4xl mx-auto leading-relaxed transform skew-x-1 group-hover:skew-x-0 transition-transform duration-500">
                     {slideContent[currentSlide].description}
                   </p>
+                  
+                  {/* News Button - Positioned near main header */}
+                  <div className="mt-8 sm:mt-10">
+                    <div className="relative group transform rotate-1 hover:rotate-0 transition-all duration-700 hover:scale-105 inline-block">
+                      <a 
+                        href="/news" 
+                        className="bg-black border-2 border-retro-green/30 rounded-none px-6 sm:px-8 py-3 sm:py-4 overflow-hidden block hover:border-retro-green transition-all duration-300"
+                      >
+                        <div className="absolute inset-0 bg-gradient-to-br from-retro-green/5 to-retro-cyan/5"></div>
+                        <div className="relative flex items-center justify-center gap-2 sm:gap-3">
+                          <div className="w-6 h-6 sm:w-8 sm:h-8 bg-retro-green rounded-none flex items-center justify-center transform rotate-2 group-hover:rotate-0 transition-transform duration-300">
+                            <span className="text-black font-bold text-sm sm:text-lg">📰</span>
+                          </div>
+                          <span className="text-retro-green font-bold text-sm sm:text-lg md:text-xl font-mono tracking-wider transform -skew-x-1 group-hover:skew-x-0 transition-transform duration-500">
+                            EXPLORE CRYPTO NEWS
+                          </span>
+                          <div className="w-5 h-5 sm:w-6 sm:h-6 bg-retro-cyan rounded-none flex items-center justify-center transform -rotate-2 group-hover:rotate-0 transition-transform duration-300">
+                            <span className="text-black font-bold text-sm sm:text-base">→</span>
+                          </div>
+                        </div>
+                        <div className="absolute top-0 right-0 w-12 h-12 sm:w-16 sm:h-16 bg-retro-green/10 transform rotate-45 translate-x-6 -translate-y-6 sm:translate-x-8 sm:-translate-y-8"></div>
+                      </a>
+                    </div>
+                  </div>
                 </div>
                 <div className="absolute top-0 right-0 w-32 h-32 bg-retro-green/10 transform rotate-45 translate-x-16 -translate-y-16"></div>
               </div>

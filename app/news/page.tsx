@@ -57,233 +57,315 @@ export default function NewsPage() {
 
   return (
     <>
-      {/* Main Content - Asymmetric Design - Mobile Optimized */}
-      <div className="container mx-auto px-4 py-6 sm:py-8 md:py-12">
-        <div className="max-w-5xl mx-auto">
-          {/* News Categories - Mobile Optimized */}
-          <div className="relative group transform -rotate-1 hover:rotate-0 transition-all duration-700 hover:scale-105">
-            <div className="bg-black border-2 border-retro-blue/30 rounded-none p-4 sm:p-6 md:p-8 overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-br from-retro-blue/5 to-retro-green/5"></div>
-              <div className="relative">
-                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-retro-blue mb-4 sm:mb-6 md:mb-8 text-center font-mono tracking-wider transform skew-x-2 group-hover:skew-x-0 transition-transform duration-500">
-                  NEWS CATEGORIES
-                </h3>
-              
-                <div className="flex flex-wrap justify-center gap-2 sm:gap-3">
-                  {/* Category 1 - Bitcoin */}
-                  <div className="group bg-gray-700/50 rounded-xl px-3 sm:px-4 py-2 sm:py-3 hover:bg-orange-500 transition-all duration-300 cursor-pointer border border-gray-600/50 hover:border-orange-500 hover:shadow-lg hover:shadow-orange-500/30">
-                    <div className="flex items-center space-x-2 sm:space-x-3">
-                      <div className="w-8 h-8 sm:w-10 sm:h-10 bg-orange-500 rounded-full flex items-center justify-center group-hover:bg-white transition-colors">
-                        <span className="text-white font-bold group-hover:text-orange-500 text-sm sm:text-base">₿</span>
+      {/* Hero Section */}
+      <div className="relative bg-gradient-to-br from-gray-900 via-black to-gray-800 py-16 sm:py-20">
+        <div className="absolute inset-0 opacity-40">
+          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent"></div>
+        </div>
+        <div className="container mx-auto px-4 relative">
+          <div className="max-w-4xl mx-auto text-center">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-6">
+              <span className="bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent">
+                Crypto News
+              </span>
+            </h1>
+            <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+              Stay updated with the latest cryptocurrency news, market insights, and blockchain developments
+            </p>
+            <div className="flex flex-wrap justify-center gap-4">
+              <div className="bg-gradient-to-r from-orange-500 to-red-500 text-white px-6 py-3 rounded-full font-semibold">
+                📈 Market Updates
+              </div>
+              <div className="bg-gradient-to-r from-blue-500 to-cyan-500 text-white px-6 py-3 rounded-full font-semibold">
+                🔗 Blockchain Tech
+              </div>
+              <div className="bg-gradient-to-r from-green-500 to-emerald-500 text-white px-6 py-3 rounded-full font-semibold">
+                💰 DeFi News
+              </div>
                       </div>
-                      <div>
-                        <h4 className="text-white font-semibold text-xs sm:text-sm">BITCOIN</h4>
-                        <p className="text-gray-400 text-xs group-hover:text-white/80 hidden sm:block">Latest BTC news</p>
                       </div>
+        </div>
+      </div>
+
+      {/* Main Content */}
+      <div className="container mx-auto px-4 py-12">
+        <div className="max-w-7xl mx-auto">
+          {/* News Categories */}
+          <div className="mb-12">
+            <div className="text-center mb-8">
+              <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
+                Browse by Category
+              </h2>
+              <p className="text-gray-400 text-lg">Select a category to filter news</p>
+            </div>
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
+              {/* Category 1 - Bitcoin */}
+              <div className="group bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl p-6 hover:from-orange-500 hover:to-red-500 transition-all duration-300 cursor-pointer border border-gray-700/50 hover:border-orange-400 hover:shadow-xl hover:shadow-orange-500/20 hover:scale-105">
+                <div className="text-center">
+                  <div className="w-16 h-16 bg-orange-500 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:bg-white transition-all duration-300">
+                    <span className="text-white font-bold text-2xl group-hover:text-orange-500">₿</span>
+                  </div>
+                  <h4 className="text-white font-bold text-lg mb-2">Bitcoin</h4>
+                  <p className="text-gray-400 text-sm group-hover:text-white/90">Latest BTC news</p>
                     </div>
                   </div>
 
-                  {/* Category 2 - Ethereum */}
-                  <div className="group bg-gray-700/50 rounded-xl px-3 sm:px-4 py-2 sm:py-3 hover:bg-blue-500 transition-all duration-300 cursor-pointer border border-gray-600/50 hover:border-blue-500 hover:shadow-lg hover:shadow-blue-500/30">
-                    <div className="flex items-center space-x-2 sm:space-x-3">
-                      <div className="w-8 h-8 sm:w-10 sm:h-10 bg-blue-500 rounded-full flex items-center justify-center group-hover:bg-white transition-colors">
-                        <span className="text-white font-bold group-hover:text-blue-500 text-sm sm:text-base">Ξ</span>
-                      </div>
-                      <div>
-                        <h4 className="text-white font-semibold text-xs sm:text-sm">ETHEREUM</h4>
-                        <p className="text-gray-400 text-xs group-hover:text-white/80 hidden sm:block">ETH ecosystem</p>
-                      </div>
-                    </div>
+              {/* Category 2 - Ethereum */}
+              <div className="group bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl p-6 hover:from-blue-500 hover:to-cyan-500 transition-all duration-300 cursor-pointer border border-gray-700/50 hover:border-blue-400 hover:shadow-xl hover:shadow-blue-500/20 hover:scale-105">
+                <div className="text-center">
+                  <div className="w-16 h-16 bg-blue-500 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:bg-white transition-all duration-300">
+                    <span className="text-white font-bold text-2xl group-hover:text-blue-500">Ξ</span>
                   </div>
+                  <h4 className="text-white font-bold text-lg mb-2">Ethereum</h4>
+                  <p className="text-gray-400 text-sm group-hover:text-white/90">ETH ecosystem</p>
+                </div>
+              </div>
 
-                  {/* Category 3 - DeFi */}
-                  <div className="group bg-gray-700/50 rounded-xl px-3 sm:px-4 py-2 sm:py-3 hover:bg-green-500 transition-all duration-300 cursor-pointer border border-gray-600/50 hover:border-green-500 hover:shadow-lg hover:shadow-green-500/30">
-                    <div className="flex items-center space-x-2 sm:space-x-3">
-                      <div className="w-8 h-8 sm:w-10 sm:h-10 bg-green-500 rounded-full flex items-center justify-center group-hover:bg-white transition-colors">
-                        <span className="text-white font-bold group-hover:text-green-500 text-sm sm:text-base">D</span>
-                      </div>
-                      <div>
-                        <h4 className="text-white font-semibold text-xs sm:text-sm">DEFI</h4>
-                        <p className="text-gray-400 text-xs group-hover:text-white/80 hidden sm:block">Decentralized finance</p>
-                      </div>
-                    </div>
+              {/* Category 3 - DeFi */}
+              <div className="group bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl p-6 hover:from-green-500 hover:to-emerald-500 transition-all duration-300 cursor-pointer border border-gray-700/50 hover:border-green-400 hover:shadow-xl hover:shadow-green-500/20 hover:scale-105">
+                <div className="text-center">
+                  <div className="w-16 h-16 bg-green-500 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:bg-white transition-all duration-300">
+                    <span className="text-white font-bold text-2xl group-hover:text-green-500">D</span>
                   </div>
+                  <h4 className="text-white font-bold text-lg mb-2">DeFi</h4>
+                  <p className="text-gray-400 text-sm group-hover:text-white/90">Decentralized finance</p>
+                </div>
+              </div>
 
-                  {/* Category 4 - NFT */}
-                  <div className="group bg-gray-700/50 rounded-xl px-3 sm:px-4 py-2 sm:py-3 hover:bg-purple-500 transition-all duration-300 cursor-pointer border border-gray-600/50 hover:border-purple-500 hover:shadow-lg hover:shadow-purple-500/30">
-                    <div className="flex items-center space-x-2 sm:space-x-3">
-                      <div className="w-8 h-8 sm:w-10 sm:h-10 bg-purple-500 rounded-full flex items-center justify-center group-hover:bg-white transition-colors">
-                        <span className="text-white font-bold group-hover:text-purple-500 text-sm sm:text-base">N</span>
-                      </div>
-                      <div>
-                        <h4 className="text-white font-semibold text-xs sm:text-sm">NFT</h4>
-                        <p className="text-gray-400 text-xs group-hover:text-white/80 hidden sm:block">Digital collectibles</p>
-                      </div>
-                    </div>
+              {/* Category 4 - NFT */}
+              <div className="group bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl p-6 hover:from-purple-500 hover:to-pink-500 transition-all duration-300 cursor-pointer border border-gray-700/50 hover:border-purple-400 hover:shadow-xl hover:shadow-purple-500/20 hover:scale-105">
+                <div className="text-center">
+                  <div className="w-16 h-16 bg-purple-500 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:bg-white transition-all duration-300">
+                    <span className="text-white font-bold text-2xl group-hover:text-purple-500">N</span>
                   </div>
+                  <h4 className="text-white font-bold text-lg mb-2">NFT</h4>
+                  <p className="text-gray-400 text-sm group-hover:text-white/90">Digital collectibles</p>
+                </div>
+              </div>
 
-                  {/* Category 5 - Web3 */}
-                  <div className="group bg-gray-700/50 rounded-xl px-3 sm:px-4 py-2 sm:py-3 hover:bg-cyan-500 transition-all duration-300 cursor-pointer border border-gray-600/50 hover:border-cyan-500 hover:shadow-lg hover:shadow-cyan-500/30">
-                    <div className="flex items-center space-x-2 sm:space-x-3">
-                      <div className="w-8 h-8 sm:w-10 sm:h-10 bg-cyan-500 rounded-full flex items-center justify-center group-hover:bg-white transition-colors">
-                        <span className="text-white font-bold group-hover:text-cyan-500 text-sm sm:text-base">W</span>
-                      </div>
-                      <div>
-                        <h4 className="text-white font-semibold text-xs sm:text-sm">WEB3</h4>
-                        <p className="text-gray-400 text-xs group-hover:text-white/80 hidden sm:block">Next-gen internet</p>
-                      </div>
-                    </div>
+              {/* Category 5 - Web3 */}
+              <div className="group bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl p-6 hover:from-cyan-500 hover:to-blue-500 transition-all duration-300 cursor-pointer border border-gray-700/50 hover:border-cyan-400 hover:shadow-xl hover:shadow-cyan-500/20 hover:scale-105">
+                <div className="text-center">
+                  <div className="w-16 h-16 bg-cyan-500 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:bg-white transition-all duration-300">
+                    <span className="text-white font-bold text-2xl group-hover:text-cyan-500">W</span>
                   </div>
+                  <h4 className="text-white font-bold text-lg mb-2">Web3</h4>
+                  <p className="text-gray-400 text-sm group-hover:text-white/90">Next-gen internet</p>
+                </div>
+              </div>
 
-                  {/* Category 6 - Blockchain */}
-                  <div className="group bg-gray-700/50 rounded-xl px-3 sm:px-4 py-2 sm:py-3 hover:bg-red-500 transition-all duration-300 cursor-pointer border border-gray-600/50 hover:border-red-500 hover:shadow-lg hover:shadow-red-500/30">
-                    <div className="flex items-center space-x-2 sm:space-x-3">
-                      <div className="w-8 h-8 sm:w-10 sm:h-10 bg-red-500 rounded-full flex items-center justify-center group-hover:bg-white transition-colors">
-                        <span className="text-white font-bold group-hover:text-red-500 text-sm sm:text-base">B</span>
-                      </div>
-                      <div>
-                        <h4 className="text-white font-semibold text-xs sm:text-sm">BLOCKCHAIN</h4>
-                        <p className="text-gray-400 text-xs group-hover:text-white/80 hidden sm:block">Core technology</p>
-                      </div>
-                    </div>
+              {/* Category 6 - Blockchain */}
+              <div className="group bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl p-6 hover:from-red-500 hover:to-orange-500 transition-all duration-300 cursor-pointer border border-gray-700/50 hover:border-red-400 hover:shadow-xl hover:shadow-red-500/20 hover:scale-105">
+                <div className="text-center">
+                  <div className="w-16 h-16 bg-red-500 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:bg-white transition-all duration-300">
+                    <span className="text-white font-bold text-2xl group-hover:text-red-500">B</span>
                   </div>
+                  <h4 className="text-white font-bold text-lg mb-2">Blockchain</h4>
+                  <p className="text-gray-400 text-sm group-hover:text-white/90">Core technology</p>
+                </div>
+              </div>
 
-                  {/* Category 7 - Trading */}
-                  <div className="group bg-gray-700/50 rounded-xl px-3 sm:px-4 py-2 sm:py-3 hover:bg-yellow-500 transition-all duration-300 cursor-pointer border border-gray-600/50 hover:border-yellow-500 hover:shadow-lg hover:shadow-yellow-500/30">
-                    <div className="flex items-center space-x-2 sm:space-x-3">
-                      <div className="w-8 h-8 sm:w-10 sm:h-10 bg-yellow-500 rounded-full flex items-center justify-center group-hover:bg-white transition-colors">
-                        <span className="text-white font-bold group-hover:text-yellow-500 text-sm sm:text-base">T</span>
-                      </div>
-                      <div>
-                        <h4 className="text-white font-semibold text-xs sm:text-sm">TRADING</h4>
-                        <p className="text-gray-400 text-xs group-hover:text-white/80 hidden sm:block">Market analysis</p>
-                      </div>
-                    </div>
+              {/* Category 7 - Trading */}
+              <div className="group bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl p-6 hover:from-yellow-500 hover:to-orange-500 transition-all duration-300 cursor-pointer border border-gray-700/50 hover:border-yellow-400 hover:shadow-xl hover:shadow-yellow-500/20 hover:scale-105">
+                <div className="text-center">
+                  <div className="w-16 h-16 bg-yellow-500 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:bg-white transition-all duration-300">
+                    <span className="text-white font-bold text-2xl group-hover:text-yellow-500">T</span>
                   </div>
+                  <h4 className="text-white font-bold text-lg mb-2">Trading</h4>
+                  <p className="text-gray-400 text-sm group-hover:text-white/90">Market analysis</p>
+                </div>
+              </div>
 
-                  {/* Category 8 - Regulation */}
-                  <div className="group bg-gray-700/50 rounded-xl px-3 sm:px-4 py-2 sm:py-3 hover:bg-indigo-500 transition-all duration-300 cursor-pointer border border-gray-600/50 hover:border-indigo-500 hover:shadow-lg hover:shadow-indigo-500/30">
-                    <div className="flex items-center space-x-2 sm:space-x-3">
-                      <div className="w-8 h-8 sm:w-10 sm:h-10 bg-indigo-500 rounded-full flex items-center justify-center group-hover:bg-white transition-colors">
-                        <span className="text-white font-bold group-hover:text-indigo-500 text-sm sm:text-base">R</span>
-                      </div>
-                      <div>
-                        <h4 className="text-white font-semibold text-xs sm:text-sm">REGULATION</h4>
-                        <p className="text-gray-400 text-xs group-hover:text-white/80 hidden sm:block">Legal updates</p>
-                      </div>
-                    </div>
+              {/* Category 8 - Regulation */}
+              <div className="group bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl p-6 hover:from-indigo-500 hover:to-purple-500 transition-all duration-300 cursor-pointer border border-gray-700/50 hover:border-indigo-400 hover:shadow-xl hover:shadow-indigo-500/20 hover:scale-105">
+                <div className="text-center">
+                  <div className="w-16 h-16 bg-indigo-500 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:bg-white transition-all duration-300">
+                    <span className="text-white font-bold text-2xl group-hover:text-indigo-500">R</span>
                   </div>
+                  <h4 className="text-white font-bold text-lg mb-2">Regulation</h4>
+                  <p className="text-gray-400 text-sm group-hover:text-white/90">Legal updates</p>
+                </div>
+              </div>
 
-                  {/* Category 9 - Security */}
-                  <div className="group bg-gray-700/50 rounded-xl px-3 sm:px-4 py-2 sm:py-3 hover:bg-pink-500 transition-all duration-300 cursor-pointer border border-gray-600/50 hover:border-pink-500 hover:shadow-lg hover:shadow-pink-500/30">
-                    <div className="flex items-center space-x-2 sm:space-x-3">
-                      <div className="w-8 h-8 sm:w-10 sm:h-10 bg-pink-500 rounded-full flex items-center justify-center group-hover:bg-white transition-colors">
-                        <span className="text-white font-bold group-hover:text-pink-500 text-sm sm:text-base">S</span>
-                      </div>
-                      <div>
-                        <h4 className="text-white font-semibold text-xs sm:text-sm">SECURITY</h4>
-                        <p className="text-gray-400 text-xs group-hover:text-white/80 hidden sm:block">Cybersecurity</p>
-                      </div>
-                    </div>
+              {/* Category 9 - Security */}
+              <div className="group bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl p-6 hover:from-pink-500 hover:to-rose-500 transition-all duration-300 cursor-pointer border border-gray-700/50 hover:border-pink-400 hover:shadow-xl hover:shadow-pink-500/20 hover:scale-105">
+                <div className="text-center">
+                  <div className="w-16 h-16 bg-pink-500 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:bg-white transition-all duration-300">
+                    <span className="text-white font-bold text-2xl group-hover:text-pink-500">S</span>
                   </div>
+                  <h4 className="text-white font-bold text-lg mb-2">Security</h4>
+                  <p className="text-gray-400 text-sm group-hover:text-white/90">Cybersecurity</p>
                 </div>
               </div>
             </div>
           </div>
 
-          {/* News Articles Grid - Mobile Optimized */}
-          <div className="mt-6 sm:mt-8 md:mt-12">
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 md:gap-6">
+          {/* News Articles Section */}
+          <div className="mt-16">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
+                Latest News Articles
+              </h2>
+              <p className="text-gray-400 text-lg">Stay informed with the latest crypto developments</p>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {/* News 1 */}
               <div 
-                className="bg-gray-800/30 rounded-xl p-4 sm:p-6 border border-gray-700/50 hover:border-orange-500/50 transition-colors group cursor-pointer"
+                className="group bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl overflow-hidden border border-gray-700/50 hover:border-orange-400 hover:shadow-2xl hover:shadow-orange-500/10 transition-all duration-300 cursor-pointer hover:scale-105"
                 onClick={() => openNewsModal(1)}
               >
-                <div className="flex items-center gap-3 mb-3 sm:mb-4">
-                  <div className="w-8 h-8 sm:w-10 sm:h-10 bg-orange-500 rounded-full flex items-center justify-center">
-                    <span className="text-white font-bold text-sm sm:text-base">1</span>
+                {/* Image Gallery */}
+                <div className="relative h-48 overflow-hidden">
+                  <div className="flex h-full">
+                    <img src="/dropbox-downloads/photo1.jpg" alt="News 1" className="w-1/5 h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+                    <img src="/dropbox-downloads/photo2.jpg" alt="News 1" className="w-1/5 h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+                    <img src="/dropbox-downloads/photo3.jpg" alt="News 1" className="w-1/5 h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+                    <img src="/dropbox-downloads/photo4.jpg" alt="News 1" className="w-1/5 h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+                    <img src="/dropbox-downloads/photo5.jpg" alt="News 1" className="w-1/5 h-full object-cover group-hover:scale-110 transition-transform duration-500" />
                   </div>
-                  <div>
-                    <h4 className="text-white font-semibold text-sm sm:text-base">News Article 1</h4>
-                    <p className="text-gray-400 text-xs sm:text-sm">Latest updates</p>
-                  </div>
-                </div>
-                <div className="text-gray-300 text-xs sm:text-sm mb-3 sm:mb-4 line-clamp-3">
-                  <div className="w-full h-32 border border-orange-500/30 rounded overflow-hidden">
-                    <div className="flex h-full">
-                      <img src="/dropbox-downloads/photo1.jpg" alt="News 1" className="w-1/5 h-full object-cover" />
-                      <img src="/dropbox-downloads/photo2.jpg" alt="News 1" className="w-1/5 h-full object-cover" />
-                      <img src="/dropbox-downloads/photo3.jpg" alt="News 1" className="w-1/5 h-full object-cover" />
-                      <img src="/dropbox-downloads/photo4.jpg" alt="News 1" className="w-1/5 h-full object-cover" />
-                      <img src="/dropbox-downloads/photo5.jpg" alt="News 1" className="w-1/5 h-full object-cover" />
+                  <div className="absolute top-4 left-4">
+                    <div className="bg-orange-500 text-white px-3 py-1 rounded-full text-sm font-bold">
+                      Bitcoin
                     </div>
                   </div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </div>
-                <div className="flex items-center justify-between">
-                  <span className="text-orange-400 text-xs sm:text-sm font-semibold">READ MORE</span>
-                  <span className="text-gray-400 text-xs">→</span>
+                
+                {/* Content */}
+                <div className="p-6">
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="w-10 h-10 bg-orange-500 rounded-full flex items-center justify-center">
+                      <span className="text-white font-bold">1</span>
+                    </div>
+                    <div>
+                      <h3 className="text-white font-bold text-lg group-hover:text-orange-400 transition-colors">
+                        Bitcoin Market Analysis
+                      </h3>
+                      <p className="text-gray-400 text-sm">Latest BTC updates and trends</p>
+                    </div>
+                  </div>
+                  
+                  <p className="text-gray-300 text-sm mb-4 line-clamp-2">
+                    Comprehensive analysis of Bitcoin's recent market movements, institutional adoption, and future outlook in the cryptocurrency space.
+                  </p>
+                  
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-2 text-gray-400 text-sm">
+                      <span>📅</span>
+                      <span>Jan 15, 2025</span>
+                    </div>
+                    <div className="flex items-center gap-2 text-orange-400 font-semibold group-hover:text-orange-300 transition-colors">
+                      <span>Read More</span>
+                      <span className="group-hover:translate-x-1 transition-transform">→</span>
+                    </div>
+                  </div>
                 </div>
               </div>
 
               {/* News 2 */}
               <div 
-                className="bg-gray-800/30 rounded-xl p-4 sm:p-6 border border-gray-700/50 hover:border-blue-500/50 transition-colors group cursor-pointer"
+                className="group bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl overflow-hidden border border-gray-700/50 hover:border-blue-400 hover:shadow-2xl hover:shadow-blue-500/10 transition-all duration-300 cursor-pointer hover:scale-105"
                 onClick={() => openNewsModal(2)}
               >
-                <div className="flex items-center gap-3 mb-3 sm:mb-4">
-                  <div className="w-8 h-8 sm:w-10 sm:h-10 bg-blue-500 rounded-full flex items-center justify-center">
-                    <span className="text-white font-bold text-sm sm:text-base">2</span>
+                {/* Image Gallery */}
+                <div className="relative h-48 overflow-hidden">
+                  <div className="flex h-full">
+                    <img src="/dropbox-downloads/photo6.jpg" alt="News 2" className="w-1/5 h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+                    <img src="/dropbox-downloads/photo7.jpg" alt="News 2" className="w-1/5 h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+                    <img src="/dropbox-downloads/photo8.jpg" alt="News 2" className="w-1/5 h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+                    <img src="/dropbox-downloads/photo9.jpg" alt="News 2" className="w-1/5 h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+                    <img src="/dropbox-downloads/photo10.jpg" alt="News 2" className="w-1/5 h-full object-cover group-hover:scale-110 transition-transform duration-500" />
                   </div>
-                  <div>
-                    <h4 className="text-white font-semibold text-sm sm:text-base">News Article 2</h4>
-                    <p className="text-gray-400 text-xs sm:text-sm">Market insights</p>
-                  </div>
-                </div>
-                <div className="text-gray-300 text-xs sm:text-sm mb-3 sm:mb-4 line-clamp-3">
-                  <div className="w-full h-32 border border-blue-500/30 rounded overflow-hidden">
-                    <div className="flex h-full">
-                      <img src="/dropbox-downloads/photo6.jpg" alt="News 2" className="w-1/5 h-full object-cover" />
-                      <img src="/dropbox-downloads/photo7.jpg" alt="News 2" className="w-1/5 h-full object-cover" />
-                      <img src="/dropbox-downloads/photo8.jpg" alt="News 2" className="w-1/5 h-full object-cover" />
-                      <img src="/dropbox-downloads/photo9.jpg" alt="News 2" className="w-1/5 h-full object-cover" />
-                      <img src="/dropbox-downloads/photo10.jpg" alt="News 2" className="w-1/5 h-full object-cover" />
+                  <div className="absolute top-4 left-4">
+                    <div className="bg-blue-500 text-white px-3 py-1 rounded-full text-sm font-bold">
+                      Ethereum
                     </div>
                   </div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </div>
-                <div className="flex items-center justify-between">
-                  <span className="text-blue-400 text-xs sm:text-sm font-semibold">READ MORE</span>
-                  <span className="text-gray-400 text-xs">→</span>
+                
+                {/* Content */}
+                <div className="p-6">
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center">
+                      <span className="text-white font-bold">2</span>
+                    </div>
+                    <div>
+                      <h3 className="text-white font-bold text-lg group-hover:text-blue-400 transition-colors">
+                        Ethereum Ecosystem Update
+                      </h3>
+                      <p className="text-gray-400 text-sm">ETH market insights and developments</p>
+                    </div>
+                  </div>
+                  
+                  <p className="text-gray-300 text-sm mb-4 line-clamp-2">
+                    Latest developments in the Ethereum ecosystem including DeFi protocols, NFT market trends, and upcoming network upgrades.
+                  </p>
+                  
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-2 text-gray-400 text-sm">
+                      <span>📅</span>
+                      <span>Jan 14, 2025</span>
+                    </div>
+                    <div className="flex items-center gap-2 text-blue-400 font-semibold group-hover:text-blue-300 transition-colors">
+                      <span>Read More</span>
+                      <span className="group-hover:translate-x-1 transition-transform">→</span>
+                    </div>
+                  </div>
                 </div>
               </div>
 
               {/* News 3 */}
               <div 
-                className="bg-gray-800/30 rounded-xl p-4 sm:p-6 border border-gray-700/50 hover:border-green-500/50 transition-colors group cursor-pointer"
+                className="group bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl overflow-hidden border border-gray-700/50 hover:border-green-400 hover:shadow-2xl hover:shadow-green-500/10 transition-all duration-300 cursor-pointer hover:scale-105"
                 onClick={() => openNewsModal(3)}
               >
-                <div className="flex items-center gap-3 mb-3 sm:mb-4">
-                  <div className="w-8 h-8 sm:w-10 sm:h-10 bg-green-500 rounded-full flex items-center justify-center">
-                    <span className="text-white font-bold text-sm sm:text-base">3</span>
+                {/* Image Gallery */}
+                <div className="relative h-48 overflow-hidden">
+                  <div className="flex h-full">
+                    <img src="/dropbox-downloads/photo11.jpg" alt="News 3" className="w-1/5 h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+                    <img src="/dropbox-downloads/photo12.jpg" alt="News 3" className="w-1/5 h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+                    <img src="/dropbox-downloads/photo13.jpg" alt="News 3" className="w-1/5 h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+                    <img src="/dropbox-downloads/photo14.jpg" alt="News 3" className="w-1/5 h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+                    <img src="/dropbox-downloads/photo15.jpg" alt="News 3" className="w-1/5 h-full object-cover group-hover:scale-110 transition-transform duration-500" />
                   </div>
-                  <div>
-                    <h4 className="text-white font-semibold text-sm sm:text-base">News Article 3</h4>
-                    <p className="text-gray-400 text-xs sm:text-sm">DeFi updates</p>
-                  </div>
-                </div>
-                <div className="text-gray-300 text-xs sm:text-sm mb-3 sm:mb-4 line-clamp-3">
-                  <div className="w-full h-32 border border-green-500/30 rounded overflow-hidden">
-                    <div className="flex h-full">
-                      <img src="/dropbox-downloads/photo11.jpg" alt="News 3" className="w-1/5 h-full object-cover" />
-                      <img src="/dropbox-downloads/photo12.jpg" alt="News 3" className="w-1/5 h-full object-cover" />
-                      <img src="/dropbox-downloads/photo13.jpg" alt="News 3" className="w-1/5 h-full object-cover" />
-                      <img src="/dropbox-downloads/photo14.jpg" alt="News 3" className="w-1/5 h-full object-cover" />
-                      <img src="/dropbox-downloads/photo15.jpg" alt="News 3" className="w-1/5 h-full object-cover" />
+                  <div className="absolute top-4 left-4">
+                    <div className="bg-green-500 text-white px-3 py-1 rounded-full text-sm font-bold">
+                      DeFi
                     </div>
                   </div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </div>
-                <div className="flex items-center justify-between">
-                  <span className="text-green-400 text-xs sm:text-sm font-semibold">READ MORE</span>
-                  <span className="text-gray-400 text-xs">→</span>
+                
+                {/* Content */}
+                <div className="p-6">
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="w-10 h-10 bg-green-500 rounded-full flex items-center justify-center">
+                      <span className="text-white font-bold">3</span>
+                    </div>
+                    <div>
+                      <h3 className="text-white font-bold text-lg group-hover:text-green-400 transition-colors">
+                        DeFi Protocol Innovations
+                      </h3>
+                      <p className="text-gray-400 text-sm">Latest DeFi updates and yield farming</p>
+                    </div>
+                  </div>
+                  
+                  <p className="text-gray-300 text-sm mb-4 line-clamp-2">
+                    Explore the newest DeFi protocols, yield farming opportunities, and decentralized finance innovations reshaping the crypto landscape.
+                  </p>
+                  
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-2 text-gray-400 text-sm">
+                      <span>📅</span>
+                      <span>Jan 13, 2025</span>
+                    </div>
+                    <div className="flex items-center gap-2 text-green-400 font-semibold group-hover:text-green-300 transition-colors">
+                      <span>Read More</span>
+                      <span className="group-hover:translate-x-1 transition-transform">→</span>
+                    </div>
+                  </div>
                 </div>
               </div>
 
@@ -479,53 +561,46 @@ export default function NewsPage() {
 
       {/* News Modal */}
       {selectedNews && (
-        <div className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4">
-          <div className="bg-gray-900 border border-gray-700 rounded-xl max-w-4xl w-full max-h-[90vh] overflow-hidden">
-            <div className="flex items-center justify-between p-4 border-b border-gray-700">
-              <h3 className="text-white font-bold text-lg">News Article {selectedNews}</h3>
+        <div className="fixed inset-0 bg-black/90 backdrop-blur-md z-50 flex items-center justify-center p-4">
+          <div className="bg-gradient-to-br from-gray-900 to-black border border-gray-700/50 rounded-3xl max-w-5xl w-full max-h-[95vh] overflow-hidden shadow-2xl">
+            {/* Modal Header */}
+            <div className="flex items-center justify-between p-6 border-b border-gray-700/50 bg-gradient-to-r from-gray-800/50 to-gray-900/50">
+              <div className="flex items-center gap-4">
+                <div className="w-12 h-12 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full flex items-center justify-center">
+                  <span className="text-white font-bold text-lg">{selectedNews}</span>
+                </div>
+                <div>
+                  <h3 className="text-white font-bold text-xl">News Article {selectedNews}</h3>
+                  <p className="text-gray-400 text-sm">Crypto Club 69 - Latest Updates</p>
+                </div>
+              </div>
               <button
                 onClick={closeNewsModal}
-                className="text-gray-400 hover:text-white text-2xl font-bold"
+                className="text-gray-400 hover:text-white hover:bg-gray-700/50 rounded-full p-2 transition-all duration-200"
               >
-                ×
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                </svg>
               </button>
             </div>
-            <div className="p-4 overflow-y-auto max-h-[calc(90vh-80px)]">
-              <div 
-                className="w-full min-h-[600px] border border-gray-600 rounded bg-black"
-                dangerouslySetInnerHTML={{
-                  __html: isLoading ? `
-                    <div style="
-                      background: #000000;
-                      color: #00ff41;
-                      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-                      padding: 20px;
-                      line-height: 1.6;
-                      min-height: 600px;
-                    ">
-                      <div style="text-align: center; padding: 40px;">
-                        <div style="
-                          width: 60px;
-                          height: 60px;
-                          border: 3px solid #00ff41;
-                          border-top: 3px solid transparent;
-                          border-radius: 50%;
-                          animation: spin 1s linear infinite;
-                          margin: 0 auto 20px;
-                        "></div>
-                        <p style="color: #00ff41; font-size: 18px; margin: 0;">Loading News Article ${selectedNews}...</p>
-                      </div>
-                      <style>
-                        @keyframes spin {
-                          0% { transform: rotate(0deg); }
-                          100% { transform: rotate(360deg); }
-                        }
-                      </style>
-                    </div>
-                  ` : newsContent
-                }}
-                id="news-content"
-              />
+            
+            {/* Modal Content */}
+            <div className="p-6 overflow-y-auto max-h-[calc(95vh-120px)]">
+              {isLoading ? (
+                <div className="flex items-center justify-center min-h-[600px]">
+                  <div className="text-center">
+                    <div className="w-16 h-16 border-4 border-cyan-400 border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
+                    <p className="text-cyan-400 text-lg font-semibold">Loading News Article {selectedNews}...</p>
+                    <p className="text-gray-400 text-sm mt-2">Please wait while we fetch the content</p>
+                  </div>
+                </div>
+              ) : (
+                <div 
+                  className="w-full min-h-[600px] border border-gray-600/30 rounded-2xl bg-black/50 backdrop-blur-sm p-6"
+                  dangerouslySetInnerHTML={{ __html: newsContent }}
+                  id="news-content"
+                />
+              )}
             </div>
           </div>
         </div>
