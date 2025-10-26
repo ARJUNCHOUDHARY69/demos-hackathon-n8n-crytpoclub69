@@ -1,13 +1,54 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Footer from '@/components/Footer'
 
 export default function NewsPage() {
   const [selectedNews, setSelectedNews] = useState<number | null>(null)
+  const [newsContent, setNewsContent] = useState<string>('')
+  const [isLoading, setIsLoading] = useState(false)
 
-  const openNewsModal = (newsNumber: number) => {
+  const openNewsModal = async (newsNumber: number) => {
     setSelectedNews(newsNumber)
+    setIsLoading(true)
+    
+    try {
+      const response = await fetch(`/api/news/${newsNumber}`)
+      if (response.ok) {
+        const content = await response.text()
+        setNewsContent(content)
+      } else {
+        setNewsContent(`
+          <div style="
+            background: #000000;
+            color: #ff4444;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            padding: 40px;
+            text-align: center;
+            line-height: 1.6;
+          ">
+            <h2>Error Loading News Article</h2>
+            <p>Sorry, we couldn't load this news article. Please try again later.</p>
+          </div>
+        `)
+      }
+    } catch (error) {
+      setNewsContent(`
+        <div style="
+          background: #000000;
+          color: #ff4444;
+          font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+          padding: 40px;
+          text-align: center;
+          line-height: 1.6;
+        ">
+          <h2>Error Loading News Article</h2>
+          <p>Sorry, we couldn't load this news article. Please try again later.</p>
+        </div>
+      `)
+    } finally {
+      setIsLoading(false)
+    }
   }
 
   const closeNewsModal = () => {
@@ -168,13 +209,22 @@ export default function NewsPage() {
                   </div>
                 </div>
                 <div className="text-gray-300 text-xs sm:text-sm mb-3 sm:mb-4 line-clamp-3">
-                  <div className="w-full h-32 bg-gradient-to-br from-orange-500/20 to-orange-600/20 border border-orange-500/30 rounded flex items-center justify-center">
-                    <div className="text-center">
-                      <div className="w-12 h-12 bg-orange-500 rounded-full flex items-center justify-center mx-auto mb-2">
-                        <span className="text-white font-bold text-lg">1</span>
+                  <div className="w-full h-32 bg-gradient-to-br from-orange-500/20 to-orange-600/20 border border-orange-500/30 rounded overflow-hidden relative">
+                    <div className="absolute inset-0 flex">
+                      <img src="/dropbox-downloads/photo1.jpg" alt="News 1" className="w-1/5 h-full object-cover" />
+                      <img src="/dropbox-downloads/photo2.jpg" alt="News 1" className="w-1/5 h-full object-cover" />
+                      <img src="/dropbox-downloads/photo3.jpg" alt="News 1" className="w-1/5 h-full object-cover" />
+                      <img src="/dropbox-downloads/photo4.jpg" alt="News 1" className="w-1/5 h-full object-cover" />
+                      <img src="/dropbox-downloads/photo5.jpg" alt="News 1" className="w-1/5 h-full object-cover" />
+                    </div>
+                    <div className="absolute inset-0 bg-black/60 flex items-center justify-center">
+                      <div className="text-center">
+                        <div className="w-12 h-12 bg-orange-500 rounded-full flex items-center justify-center mx-auto mb-2">
+                          <span className="text-white font-bold text-lg">1</span>
+                        </div>
+                        <p className="text-orange-400 font-mono text-sm font-bold">NEWS ARTICLE 1</p>
+                        <p className="text-orange-300 font-mono text-xs">Click to read full content</p>
                       </div>
-                      <p className="text-orange-400 font-mono text-sm font-bold">NEWS ARTICLE 1</p>
-                      <p className="text-orange-300 font-mono text-xs">Click to read full content</p>
                     </div>
                   </div>
                 </div>
@@ -199,13 +249,22 @@ export default function NewsPage() {
                   </div>
                 </div>
                 <div className="text-gray-300 text-xs sm:text-sm mb-3 sm:mb-4 line-clamp-3">
-                  <div className="w-full h-32 bg-gradient-to-br from-blue-500/20 to-blue-600/20 border border-blue-500/30 rounded flex items-center justify-center">
-                    <div className="text-center">
-                      <div className="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center mx-auto mb-2">
-                        <span className="text-white font-bold text-lg">2</span>
+                  <div className="w-full h-32 bg-gradient-to-br from-blue-500/20 to-blue-600/20 border border-blue-500/30 rounded overflow-hidden relative">
+                    <div className="absolute inset-0 flex">
+                      <img src="/dropbox-downloads/photo6.jpg" alt="News 2" className="w-1/5 h-full object-cover" />
+                      <img src="/dropbox-downloads/photo7.jpg" alt="News 2" className="w-1/5 h-full object-cover" />
+                      <img src="/dropbox-downloads/photo8.jpg" alt="News 2" className="w-1/5 h-full object-cover" />
+                      <img src="/dropbox-downloads/photo9.jpg" alt="News 2" className="w-1/5 h-full object-cover" />
+                      <img src="/dropbox-downloads/photo10.jpg" alt="News 2" className="w-1/5 h-full object-cover" />
+                    </div>
+                    <div className="absolute inset-0 bg-black/60 flex items-center justify-center">
+                      <div className="text-center">
+                        <div className="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center mx-auto mb-2">
+                          <span className="text-white font-bold text-lg">2</span>
+                        </div>
+                        <p className="text-blue-400 font-mono text-sm font-bold">NEWS ARTICLE 2</p>
+                        <p className="text-blue-300 font-mono text-xs">Click to read full content</p>
                       </div>
-                      <p className="text-blue-400 font-mono text-sm font-bold">NEWS ARTICLE 2</p>
-                      <p className="text-blue-300 font-mono text-xs">Click to read full content</p>
                     </div>
                   </div>
                 </div>
@@ -230,13 +289,22 @@ export default function NewsPage() {
                   </div>
                 </div>
                 <div className="text-gray-300 text-xs sm:text-sm mb-3 sm:mb-4 line-clamp-3">
-                  <div className="w-full h-32 bg-gradient-to-br from-green-500/20 to-green-600/20 border border-green-500/30 rounded flex items-center justify-center">
-                    <div className="text-center">
-                      <div className="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-2">
-                        <span className="text-white font-bold text-lg">3</span>
+                  <div className="w-full h-32 bg-gradient-to-br from-green-500/20 to-green-600/20 border border-green-500/30 rounded overflow-hidden relative">
+                    <div className="absolute inset-0 flex">
+                      <img src="/dropbox-downloads/photo11.jpg" alt="News 3" className="w-1/5 h-full object-cover" />
+                      <img src="/dropbox-downloads/photo12.jpg" alt="News 3" className="w-1/5 h-full object-cover" />
+                      <img src="/dropbox-downloads/photo13.jpg" alt="News 3" className="w-1/5 h-full object-cover" />
+                      <img src="/dropbox-downloads/photo14.jpg" alt="News 3" className="w-1/5 h-full object-cover" />
+                      <img src="/dropbox-downloads/photo15.jpg" alt="News 3" className="w-1/5 h-full object-cover" />
+                    </div>
+                    <div className="absolute inset-0 bg-black/60 flex items-center justify-center">
+                      <div className="text-center">
+                        <div className="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-2">
+                          <span className="text-white font-bold text-lg">3</span>
+                        </div>
+                        <p className="text-green-400 font-mono text-sm font-bold">NEWS ARTICLE 3</p>
+                        <p className="text-green-300 font-mono text-xs">Click to read full content</p>
                       </div>
-                      <p className="text-green-400 font-mono text-sm font-bold">NEWS ARTICLE 3</p>
-                      <p className="text-green-300 font-mono text-xs">Click to read full content</p>
                     </div>
                   </div>
                 </div>
@@ -261,13 +329,22 @@ export default function NewsPage() {
                   </div>
                 </div>
                 <div className="text-gray-300 text-xs sm:text-sm mb-3 sm:mb-4 line-clamp-3">
-                  <div className="w-full h-32 bg-gradient-to-br from-purple-500/20 to-purple-600/20 border border-purple-500/30 rounded flex items-center justify-center">
-                    <div className="text-center">
-                      <div className="w-12 h-12 bg-purple-500 rounded-full flex items-center justify-center mx-auto mb-2">
-                        <span className="text-white font-bold text-lg">4</span>
+                  <div className="w-full h-32 bg-gradient-to-br from-purple-500/20 to-purple-600/20 border border-purple-500/30 rounded overflow-hidden relative">
+                    <div className="absolute inset-0 flex">
+                      <img src="/dropbox-downloads/photo16.jpg" alt="News 4" className="w-1/5 h-full object-cover" />
+                      <img src="/dropbox-downloads/photo17.jpg" alt="News 4" className="w-1/5 h-full object-cover" />
+                      <img src="/dropbox-downloads/photo18.jpg" alt="News 4" className="w-1/5 h-full object-cover" />
+                      <img src="/dropbox-downloads/photo19.jpg" alt="News 4" className="w-1/5 h-full object-cover" />
+                      <img src="/dropbox-downloads/photo20.jpg" alt="News 4" className="w-1/5 h-full object-cover" />
+                    </div>
+                    <div className="absolute inset-0 bg-black/60 flex items-center justify-center">
+                      <div className="text-center">
+                        <div className="w-12 h-12 bg-purple-500 rounded-full flex items-center justify-center mx-auto mb-2">
+                          <span className="text-white font-bold text-lg">4</span>
+                        </div>
+                        <p className="text-purple-400 font-mono text-sm font-bold">NEWS ARTICLE 4</p>
+                        <p className="text-purple-300 font-mono text-xs">Click to read full content</p>
                       </div>
-                      <p className="text-purple-400 font-mono text-sm font-bold">NEWS ARTICLE 4</p>
-                      <p className="text-purple-300 font-mono text-xs">Click to read full content</p>
                     </div>
                   </div>
                 </div>
@@ -292,13 +369,22 @@ export default function NewsPage() {
                   </div>
                 </div>
                 <div className="text-gray-300 text-xs sm:text-sm mb-3 sm:mb-4 line-clamp-3">
-                  <div className="w-full h-32 bg-gradient-to-br from-cyan-500/20 to-cyan-600/20 border border-cyan-500/30 rounded flex items-center justify-center">
-                    <div className="text-center">
-                      <div className="w-12 h-12 bg-cyan-500 rounded-full flex items-center justify-center mx-auto mb-2">
-                        <span className="text-white font-bold text-lg">5</span>
+                  <div className="w-full h-32 bg-gradient-to-br from-cyan-500/20 to-cyan-600/20 border border-cyan-500/30 rounded overflow-hidden relative">
+                    <div className="absolute inset-0 flex">
+                      <img src="/dropbox-downloads/photo21.jpg" alt="News 5" className="w-1/5 h-full object-cover" />
+                      <img src="/dropbox-downloads/photo22.jpg" alt="News 5" className="w-1/5 h-full object-cover" />
+                      <img src="/dropbox-downloads/photo23.jpg" alt="News 5" className="w-1/5 h-full object-cover" />
+                      <img src="/dropbox-downloads/photo24.jpg" alt="News 5" className="w-1/5 h-full object-cover" />
+                      <img src="/dropbox-downloads/photo25.jpg" alt="News 5" className="w-1/5 h-full object-cover" />
+                    </div>
+                    <div className="absolute inset-0 bg-black/60 flex items-center justify-center">
+                      <div className="text-center">
+                        <div className="w-12 h-12 bg-cyan-500 rounded-full flex items-center justify-center mx-auto mb-2">
+                          <span className="text-white font-bold text-lg">5</span>
+                        </div>
+                        <p className="text-cyan-400 font-mono text-sm font-bold">NEWS ARTICLE 5</p>
+                        <p className="text-cyan-300 font-mono text-xs">Click to read full content</p>
                       </div>
-                      <p className="text-cyan-400 font-mono text-sm font-bold">NEWS ARTICLE 5</p>
-                      <p className="text-cyan-300 font-mono text-xs">Click to read full content</p>
                     </div>
                   </div>
                 </div>
@@ -323,13 +409,22 @@ export default function NewsPage() {
                   </div>
                 </div>
                 <div className="text-gray-300 text-xs sm:text-sm mb-3 sm:mb-4 line-clamp-3">
-                  <div className="w-full h-32 bg-gradient-to-br from-red-500/20 to-red-600/20 border border-red-500/30 rounded flex items-center justify-center">
-                    <div className="text-center">
-                      <div className="w-12 h-12 bg-red-500 rounded-full flex items-center justify-center mx-auto mb-2">
-                        <span className="text-white font-bold text-lg">6</span>
+                  <div className="w-full h-32 bg-gradient-to-br from-red-500/20 to-red-600/20 border border-red-500/30 rounded overflow-hidden relative">
+                    <div className="absolute inset-0 flex">
+                      <img src="/dropbox-downloads/photo26.jpg" alt="News 6" className="w-1/5 h-full object-cover" />
+                      <img src="/dropbox-downloads/photo27.jpg" alt="News 6" className="w-1/5 h-full object-cover" />
+                      <img src="/dropbox-downloads/photo28.jpg" alt="News 6" className="w-1/5 h-full object-cover" />
+                      <img src="/dropbox-downloads/photo29.jpg" alt="News 6" className="w-1/5 h-full object-cover" />
+                      <img src="/dropbox-downloads/photo30.jpg" alt="News 6" className="w-1/5 h-full object-cover" />
+                    </div>
+                    <div className="absolute inset-0 bg-black/60 flex items-center justify-center">
+                      <div className="text-center">
+                        <div className="w-12 h-12 bg-red-500 rounded-full flex items-center justify-center mx-auto mb-2">
+                          <span className="text-white font-bold text-lg">6</span>
+                        </div>
+                        <p className="text-red-400 font-mono text-sm font-bold">NEWS ARTICLE 6</p>
+                        <p className="text-red-300 font-mono text-xs">Click to read full content</p>
                       </div>
-                      <p className="text-red-400 font-mono text-sm font-bold">NEWS ARTICLE 6</p>
-                      <p className="text-red-300 font-mono text-xs">Click to read full content</p>
                     </div>
                   </div>
                 </div>
@@ -354,13 +449,22 @@ export default function NewsPage() {
                   </div>
                 </div>
                 <div className="text-gray-300 text-xs sm:text-sm mb-3 sm:mb-4 line-clamp-3">
-                  <div className="w-full h-32 bg-gradient-to-br from-yellow-500/20 to-yellow-600/20 border border-yellow-500/30 rounded flex items-center justify-center">
-                    <div className="text-center">
-                      <div className="w-12 h-12 bg-yellow-500 rounded-full flex items-center justify-center mx-auto mb-2">
-                        <span className="text-white font-bold text-lg">7</span>
+                  <div className="w-full h-32 bg-gradient-to-br from-yellow-500/20 to-yellow-600/20 border border-yellow-500/30 rounded overflow-hidden relative">
+                    <div className="absolute inset-0 flex">
+                      <img src="/dropbox-downloads/photo31.jpg" alt="News 7" className="w-1/5 h-full object-cover" />
+                      <img src="/dropbox-downloads/photo32.jpg" alt="News 7" className="w-1/5 h-full object-cover" />
+                      <img src="/dropbox-downloads/photo33.jpg" alt="News 7" className="w-1/5 h-full object-cover" />
+                      <img src="/dropbox-downloads/photo34.jpg" alt="News 7" className="w-1/5 h-full object-cover" />
+                      <img src="/dropbox-downloads/photo35.jpg" alt="News 7" className="w-1/5 h-full object-cover" />
+                    </div>
+                    <div className="absolute inset-0 bg-black/60 flex items-center justify-center">
+                      <div className="text-center">
+                        <div className="w-12 h-12 bg-yellow-500 rounded-full flex items-center justify-center mx-auto mb-2">
+                          <span className="text-white font-bold text-lg">7</span>
+                        </div>
+                        <p className="text-yellow-400 font-mono text-sm font-bold">NEWS ARTICLE 7</p>
+                        <p className="text-yellow-300 font-mono text-xs">Click to read full content</p>
                       </div>
-                      <p className="text-yellow-400 font-mono text-sm font-bold">NEWS ARTICLE 7</p>
-                      <p className="text-yellow-300 font-mono text-xs">Click to read full content</p>
                     </div>
                   </div>
                 </div>
@@ -385,13 +489,22 @@ export default function NewsPage() {
                   </div>
                 </div>
                 <div className="text-gray-300 text-xs sm:text-sm mb-3 sm:mb-4 line-clamp-3">
-                  <div className="w-full h-32 bg-gradient-to-br from-indigo-500/20 to-indigo-600/20 border border-indigo-500/30 rounded flex items-center justify-center">
-                    <div className="text-center">
-                      <div className="w-12 h-12 bg-indigo-500 rounded-full flex items-center justify-center mx-auto mb-2">
-                        <span className="text-white font-bold text-lg">8</span>
+                  <div className="w-full h-32 bg-gradient-to-br from-indigo-500/20 to-indigo-600/20 border border-indigo-500/30 rounded overflow-hidden relative">
+                    <div className="absolute inset-0 flex">
+                      <img src="/dropbox-downloads/photo36.jpg" alt="News 8" className="w-1/5 h-full object-cover" />
+                      <img src="/dropbox-downloads/photo37.jpg" alt="News 8" className="w-1/5 h-full object-cover" />
+                      <img src="/dropbox-downloads/photo38.jpg" alt="News 8" className="w-1/5 h-full object-cover" />
+                      <img src="/dropbox-downloads/photo39.jpg" alt="News 8" className="w-1/5 h-full object-cover" />
+                      <img src="/dropbox-downloads/photo40.jpg" alt="News 8" className="w-1/5 h-full object-cover" />
+                    </div>
+                    <div className="absolute inset-0 bg-black/60 flex items-center justify-center">
+                      <div className="text-center">
+                        <div className="w-12 h-12 bg-indigo-500 rounded-full flex items-center justify-center mx-auto mb-2">
+                          <span className="text-white font-bold text-lg">8</span>
+                        </div>
+                        <p className="text-indigo-400 font-mono text-sm font-bold">NEWS ARTICLE 8</p>
+                        <p className="text-indigo-300 font-mono text-xs">Click to read full content</p>
                       </div>
-                      <p className="text-indigo-400 font-mono text-sm font-bold">NEWS ARTICLE 8</p>
-                      <p className="text-indigo-300 font-mono text-xs">Click to read full content</p>
                     </div>
                   </div>
                 </div>
@@ -416,13 +529,22 @@ export default function NewsPage() {
                   </div>
                 </div>
                 <div className="text-gray-300 text-xs sm:text-sm mb-3 sm:mb-4 line-clamp-3">
-                  <div className="w-full h-32 bg-gradient-to-br from-pink-500/20 to-pink-600/20 border border-pink-500/30 rounded flex items-center justify-center">
-                    <div className="text-center">
-                      <div className="w-12 h-12 bg-pink-500 rounded-full flex items-center justify-center mx-auto mb-2">
-                        <span className="text-white font-bold text-lg">9</span>
+                  <div className="w-full h-32 bg-gradient-to-br from-pink-500/20 to-pink-600/20 border border-pink-500/30 rounded overflow-hidden relative">
+                    <div className="absolute inset-0 flex">
+                      <img src="/dropbox-downloads/photo41.jpg" alt="News 9" className="w-1/5 h-full object-cover" />
+                      <img src="/dropbox-downloads/photo42.jpg" alt="News 9" className="w-1/5 h-full object-cover" />
+                      <img src="/dropbox-downloads/photo43.jpg" alt="News 9" className="w-1/5 h-full object-cover" />
+                      <img src="/dropbox-downloads/photo44.jpg" alt="News 9" className="w-1/5 h-full object-cover" />
+                      <img src="/dropbox-downloads/photo45.jpg" alt="News 9" className="w-1/5 h-full object-cover" />
+                    </div>
+                    <div className="absolute inset-0 bg-black/60 flex items-center justify-center">
+                      <div className="text-center">
+                        <div className="w-12 h-12 bg-pink-500 rounded-full flex items-center justify-center mx-auto mb-2">
+                          <span className="text-white font-bold text-lg">9</span>
+                        </div>
+                        <p className="text-pink-400 font-mono text-sm font-bold">NEWS ARTICLE 9</p>
+                        <p className="text-pink-300 font-mono text-xs">Click to read full content</p>
                       </div>
-                      <p className="text-pink-400 font-mono text-sm font-bold">NEWS ARTICLE 9</p>
-                      <p className="text-pink-300 font-mono text-xs">Click to read full content</p>
                     </div>
                   </div>
                 </div>
@@ -450,10 +572,40 @@ export default function NewsPage() {
               </button>
             </div>
             <div className="p-4 overflow-y-auto max-h-[calc(90vh-80px)]">
-              <iframe
-                src={`/dropbox-downloads/news${selectedNews}.html`}
-                className="w-full h-[600px] border-0 rounded"
-                title={`News Article ${selectedNews}`}
+              <div 
+                className="w-full min-h-[600px] border border-gray-600 rounded bg-black"
+                dangerouslySetInnerHTML={{
+                  __html: isLoading ? `
+                    <div style="
+                      background: #000000;
+                      color: #00ff41;
+                      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                      padding: 20px;
+                      line-height: 1.6;
+                      min-height: 600px;
+                    ">
+                      <div style="text-align: center; padding: 40px;">
+                        <div style="
+                          width: 60px;
+                          height: 60px;
+                          border: 3px solid #00ff41;
+                          border-top: 3px solid transparent;
+                          border-radius: 50%;
+                          animation: spin 1s linear infinite;
+                          margin: 0 auto 20px;
+                        "></div>
+                        <p style="color: #00ff41; font-size: 18px; margin: 0;">Loading News Article ${selectedNews}...</p>
+                      </div>
+                      <style>
+                        @keyframes spin {
+                          0% { transform: rotate(0deg); }
+                          100% { transform: rotate(360deg); }
+                        }
+                      </style>
+                    </div>
+                  ` : newsContent
+                }}
+                id="news-content"
               />
             </div>
           </div>
