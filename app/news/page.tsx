@@ -1,6 +1,19 @@
+'use client'
+
+import { useState } from 'react'
 import Footer from '@/components/Footer'
 
 export default function NewsPage() {
+  const [selectedNews, setSelectedNews] = useState<number | null>(null)
+
+  const openNewsModal = (newsNumber: number) => {
+    setSelectedNews(newsNumber)
+  }
+
+  const closeNewsModal = () => {
+    setSelectedNews(null)
+  }
+
   return (
     <>
       {/* Main Content - Asymmetric Design - Mobile Optimized */}
@@ -55,15 +68,15 @@ export default function NewsPage() {
                     </div>
                   </div>
 
-                  {/* Category 4 - NFTs */}
+                  {/* Category 4 - NFT */}
                   <div className="group bg-gray-700/50 rounded-xl px-3 sm:px-4 py-2 sm:py-3 hover:bg-purple-500 transition-all duration-300 cursor-pointer border border-gray-600/50 hover:border-purple-500 hover:shadow-lg hover:shadow-purple-500/30">
                     <div className="flex items-center space-x-2 sm:space-x-3">
                       <div className="w-8 h-8 sm:w-10 sm:h-10 bg-purple-500 rounded-full flex items-center justify-center group-hover:bg-white transition-colors">
                         <span className="text-white font-bold group-hover:text-purple-500 text-sm sm:text-base">N</span>
                       </div>
                       <div>
-                        <h4 className="text-white font-semibold text-xs sm:text-sm">NFTs</h4>
-                        <p className="text-gray-400 text-xs group-hover:text-white/80 hidden sm:block">Non-fungible tokens</p>
+                        <h4 className="text-white font-semibold text-xs sm:text-sm">NFT</h4>
+                        <p className="text-gray-400 text-xs group-hover:text-white/80 hidden sm:block">Digital collectibles</p>
                       </div>
                     </div>
                   </div>
@@ -89,7 +102,7 @@ export default function NewsPage() {
                       </div>
                       <div>
                         <h4 className="text-white font-semibold text-xs sm:text-sm">BLOCKCHAIN</h4>
-                        <p className="text-gray-400 text-xs group-hover:text-white/80 hidden sm:block">Distributed ledger</p>
+                        <p className="text-gray-400 text-xs group-hover:text-white/80 hidden sm:block">Core technology</p>
                       </div>
                     </div>
                   </div>
@@ -134,7 +147,6 @@ export default function NewsPage() {
                   </div>
                 </div>
               </div>
-              <div className="absolute top-0 right-0 w-16 h-16 bg-retro-blue/10 transform rotate-45 translate-x-8 -translate-y-8"></div>
             </div>
           </div>
 
@@ -142,7 +154,10 @@ export default function NewsPage() {
           <div className="mt-6 sm:mt-8 md:mt-12">
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 md:gap-6">
               {/* News 1 */}
-              <div className="bg-gray-800/30 rounded-xl p-4 sm:p-6 border border-gray-700/50 hover:border-orange-500/50 transition-colors group cursor-pointer">
+              <div 
+                className="bg-gray-800/30 rounded-xl p-4 sm:p-6 border border-gray-700/50 hover:border-orange-500/50 transition-colors group cursor-pointer"
+                onClick={() => openNewsModal(1)}
+              >
                 <div className="flex items-center gap-3 mb-3 sm:mb-4">
                   <div className="w-8 h-8 sm:w-10 sm:h-10 bg-orange-500 rounded-full flex items-center justify-center">
                     <span className="text-white font-bold text-sm sm:text-base">1</span>
@@ -170,7 +185,10 @@ export default function NewsPage() {
               </div>
 
               {/* News 2 */}
-              <div className="bg-gray-800/30 rounded-xl p-4 sm:p-6 border border-gray-700/50 hover:border-blue-500/50 transition-colors group cursor-pointer">
+              <div 
+                className="bg-gray-800/30 rounded-xl p-4 sm:p-6 border border-gray-700/50 hover:border-blue-500/50 transition-colors group cursor-pointer"
+                onClick={() => openNewsModal(2)}
+              >
                 <div className="flex items-center gap-3 mb-3 sm:mb-4">
                   <div className="w-8 h-8 sm:w-10 sm:h-10 bg-blue-500 rounded-full flex items-center justify-center">
                     <span className="text-white font-bold text-sm sm:text-base">2</span>
@@ -198,7 +216,10 @@ export default function NewsPage() {
               </div>
 
               {/* News 3 */}
-              <div className="bg-gray-800/30 rounded-xl p-4 sm:p-6 border border-gray-700/50 hover:border-green-500/50 transition-colors group cursor-pointer">
+              <div 
+                className="bg-gray-800/30 rounded-xl p-4 sm:p-6 border border-gray-700/50 hover:border-green-500/50 transition-colors group cursor-pointer"
+                onClick={() => openNewsModal(3)}
+              >
                 <div className="flex items-center gap-3 mb-3 sm:mb-4">
                   <div className="w-8 h-8 sm:w-10 sm:h-10 bg-green-500 rounded-full flex items-center justify-center">
                     <span className="text-white font-bold text-sm sm:text-base">3</span>
@@ -226,7 +247,10 @@ export default function NewsPage() {
               </div>
 
               {/* News 4 */}
-              <div className="bg-gray-800/30 rounded-xl p-4 sm:p-6 border border-gray-700/50 hover:border-purple-500/50 transition-colors group cursor-pointer">
+              <div 
+                className="bg-gray-800/30 rounded-xl p-4 sm:p-6 border border-gray-700/50 hover:border-purple-500/50 transition-colors group cursor-pointer"
+                onClick={() => openNewsModal(4)}
+              >
                 <div className="flex items-center gap-3 mb-3 sm:mb-4">
                   <div className="w-8 h-8 sm:w-10 sm:h-10 bg-purple-500 rounded-full flex items-center justify-center">
                     <span className="text-white font-bold text-sm sm:text-base">4</span>
@@ -254,7 +278,10 @@ export default function NewsPage() {
               </div>
 
               {/* News 5 */}
-              <div className="bg-gray-800/30 rounded-xl p-4 sm:p-6 border border-gray-700/50 hover:border-cyan-500/50 transition-colors group cursor-pointer">
+              <div 
+                className="bg-gray-800/30 rounded-xl p-4 sm:p-6 border border-gray-700/50 hover:border-cyan-500/50 transition-colors group cursor-pointer"
+                onClick={() => openNewsModal(5)}
+              >
                 <div className="flex items-center gap-3 mb-3 sm:mb-4">
                   <div className="w-8 h-8 sm:w-10 sm:h-10 bg-cyan-500 rounded-full flex items-center justify-center">
                     <span className="text-white font-bold text-sm sm:text-base">5</span>
@@ -282,7 +309,10 @@ export default function NewsPage() {
               </div>
 
               {/* News 6 */}
-              <div className="bg-gray-800/30 rounded-xl p-4 sm:p-6 border border-gray-700/50 hover:border-red-500/50 transition-colors group cursor-pointer">
+              <div 
+                className="bg-gray-800/30 rounded-xl p-4 sm:p-6 border border-gray-700/50 hover:border-red-500/50 transition-colors group cursor-pointer"
+                onClick={() => openNewsModal(6)}
+              >
                 <div className="flex items-center gap-3 mb-3 sm:mb-4">
                   <div className="w-8 h-8 sm:w-10 sm:h-10 bg-red-500 rounded-full flex items-center justify-center">
                     <span className="text-white font-bold text-sm sm:text-base">6</span>
@@ -310,14 +340,17 @@ export default function NewsPage() {
               </div>
 
               {/* News 7 */}
-              <div className="bg-gray-800/30 rounded-xl p-4 sm:p-6 border border-gray-700/50 hover:border-yellow-500/50 transition-colors group cursor-pointer">
+              <div 
+                className="bg-gray-800/30 rounded-xl p-4 sm:p-6 border border-gray-700/50 hover:border-yellow-500/50 transition-colors group cursor-pointer"
+                onClick={() => openNewsModal(7)}
+              >
                 <div className="flex items-center gap-3 mb-3 sm:mb-4">
                   <div className="w-8 h-8 sm:w-10 sm:h-10 bg-yellow-500 rounded-full flex items-center justify-center">
                     <span className="text-white font-bold text-sm sm:text-base">7</span>
                   </div>
                   <div>
                     <h4 className="text-white font-semibold text-sm sm:text-base">News Article 7</h4>
-                    <p className="text-gray-400 text-xs sm:text-sm">Trading analysis</p>
+                    <p className="text-gray-400 text-xs sm:text-sm">Trading insights</p>
                   </div>
                 </div>
                 <div className="text-gray-300 text-xs sm:text-sm mb-3 sm:mb-4 line-clamp-3">
@@ -338,14 +371,17 @@ export default function NewsPage() {
               </div>
 
               {/* News 8 */}
-              <div className="bg-gray-800/30 rounded-xl p-4 sm:p-6 border border-gray-700/50 hover:border-indigo-500/50 transition-colors group cursor-pointer">
+              <div 
+                className="bg-gray-800/30 rounded-xl p-4 sm:p-6 border border-gray-700/50 hover:border-indigo-500/50 transition-colors group cursor-pointer"
+                onClick={() => openNewsModal(8)}
+              >
                 <div className="flex items-center gap-3 mb-3 sm:mb-4">
                   <div className="w-8 h-8 sm:w-10 sm:h-10 bg-indigo-500 rounded-full flex items-center justify-center">
                     <span className="text-white font-bold text-sm sm:text-base">8</span>
                   </div>
                   <div>
                     <h4 className="text-white font-semibold text-sm sm:text-base">News Article 8</h4>
-                    <p className="text-gray-400 text-xs sm:text-sm">Regulation updates</p>
+                    <p className="text-gray-400 text-xs sm:text-sm">Regulation news</p>
                   </div>
                 </div>
                 <div className="text-gray-300 text-xs sm:text-sm mb-3 sm:mb-4 line-clamp-3">
@@ -366,14 +402,17 @@ export default function NewsPage() {
               </div>
 
               {/* News 9 */}
-              <div className="bg-gray-800/30 rounded-xl p-4 sm:p-6 border border-gray-700/50 hover:border-pink-500/50 transition-colors group cursor-pointer">
+              <div 
+                className="bg-gray-800/30 rounded-xl p-4 sm:p-6 border border-gray-700/50 hover:border-pink-500/50 transition-colors group cursor-pointer"
+                onClick={() => openNewsModal(9)}
+              >
                 <div className="flex items-center gap-3 mb-3 sm:mb-4">
                   <div className="w-8 h-8 sm:w-10 sm:h-10 bg-pink-500 rounded-full flex items-center justify-center">
                     <span className="text-white font-bold text-sm sm:text-base">9</span>
                   </div>
                   <div>
                     <h4 className="text-white font-semibold text-sm sm:text-base">News Article 9</h4>
-                    <p className="text-gray-400 text-xs sm:text-sm">Security alerts</p>
+                    <p className="text-gray-400 text-xs sm:text-sm">Security updates</p>
                   </div>
                 </div>
                 <div className="text-gray-300 text-xs sm:text-sm mb-3 sm:mb-4 line-clamp-3">
@@ -396,6 +435,30 @@ export default function NewsPage() {
           </div>
         </div>
       </div>
+
+      {/* News Modal */}
+      {selectedNews && (
+        <div className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+          <div className="bg-gray-900 border border-gray-700 rounded-xl max-w-4xl w-full max-h-[90vh] overflow-hidden">
+            <div className="flex items-center justify-between p-4 border-b border-gray-700">
+              <h3 className="text-white font-bold text-lg">News Article {selectedNews}</h3>
+              <button
+                onClick={closeNewsModal}
+                className="text-gray-400 hover:text-white text-2xl font-bold"
+              >
+                ×
+              </button>
+            </div>
+            <div className="p-4 overflow-y-auto max-h-[calc(90vh-80px)]">
+              <iframe
+                src={`/dropbox-downloads/news${selectedNews}.html`}
+                className="w-full h-[600px] border-0 rounded"
+                title={`News Article ${selectedNews}`}
+              />
+            </div>
+          </div>
+        </div>
+      )}
 
       <Footer />
     </>
