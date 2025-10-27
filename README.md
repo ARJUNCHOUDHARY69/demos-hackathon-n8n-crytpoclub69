@@ -589,14 +589,22 @@ This project can be deployed to any platform supporting Next.js:
 <div align="center">
 
 ### Homepage
-![Homepage](https://via.placeholder.com/800x400/000000/00ff00?text=CRYPTO+CLUB+69+Homepage)
+![Homepage]
+<img width="1919" height="909" alt="image" src="https://github.com/user-attachments/assets/43486c45-7b39-42a5-af41-b5dd8bd56984" />
+
 
 ### News Page
-![News Page](https://via.placeholder.com/800x400/000000/00ff00?text=News+Page+with+Glassmorphism)
+![News Page]
+<img width="1912" height="903" alt="image" src="https://github.com/user-attachments/assets/5f9362f8-821d-48c2-965d-737062f7a566" />
+
+---
+<img width="1917" height="908" alt="image" src="https://github.com/user-attachments/assets/e7b8114f-bb9a-4ff3-8416-201bb082cd37" />
+
+---
+
 
 ### Mobile View
-![Mobile](https://via.placeholder.com/400x800/000000/00ff00?text=Mobile+Responsive+Design)
-
+![Mobile]
 </div>
 
 ---
