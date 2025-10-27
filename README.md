@@ -209,6 +209,31 @@ flowchart TD
     style J fill:#4caf50
     style L fill:#ff9800
 ```
+---
+
+<img width="348" height="496" alt="Screenshot 2025-10-27 064206" src="https://github.com/user-attachments/assets/5a6c9a91-4d5e-4819-803f-fa7382211137" />
+
+---
+
+
+<img width="755" height="441" alt="Screenshot 2025-10-27 064219" src="https://github.com/user-attachments/assets/5683b03c-8dfa-419e-a6d3-c9f2f3e08fe9" />
+
+---
+
+
+<img width="574" height="491" alt="Screenshot 2025-10-27 064242" src="https://github.com/user-attachments/assets/9c6c3a4e-3586-4438-811b-b60e97b7e0f1" />
+
+---
+
+
+<img width="803" height="562" alt="Screenshot 2025-10-27 064313" src="https://github.com/user-attachments/assets/58580f75-9808-4c4e-98b2-b44a4803d17e" />
+
+---
+
+
+<img width="790" height="378" alt="Screenshot 2025-10-27 064322" src="https://github.com/user-attachments/assets/8f240d96-ff4e-47a3-bd9b-f5227b030bbd" />
+
+
 
 ### 🔄 **How It Works (Simple Steps)**
 
