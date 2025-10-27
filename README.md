@@ -35,6 +35,8 @@
 - 💰 **Cost-Effective** - No content creators needed, just automation
 - 🎯 **Binance Square Optimized** - Content designed for maximum engagement on Binance
 
+[data example on drive public big dasets for proof](https://drive.google.com/drive/folders/1JRlmPnCk3jkcKerTFi-aRk_rloXKkP3d?usp=sharing)
+
 ### 🤖 **n8n Automation Features**
 - 🧠 **AI Content Generation** - Automated article writing and image creation
 - 📁 **Dropbox Integration** - Seamless file management and sync
