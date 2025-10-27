@@ -179,8 +179,8 @@ AI-driven video generation for maximum engagement:
 5. **📊 Data-Driven:** Uses real crypto news and market data
 6. **🎯 Platform Optimized:** Content tailored for each platform's algorithm
 
+<img width="1915" height="909" alt="Screenshot 2025-10-27 070758" src="https://github.com/user-attachments/assets/5405770c-380e-4983-9077-b82811fcfc70" />
 
-![Uploading Screenshot 2025-10-27 070758.png…]()
 
 
 ### 📊 **Simple n8n Workflow Flow**
